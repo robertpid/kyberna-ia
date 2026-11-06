@@ -59,36 +59,37 @@
 
 ---
 
-## 🎬 Video Pitch Oficial de 2 Minutos (Hackathon UPN IA+ 2026)
+## 🎬 Videos Pitch Oficiales para Hackathon UPN IA+ 2026
 
-El video oficial de presentación técnica en alta definición (**1080p Full HD 1920x1080, 120.0 segundos exactos**, banda sonora de sintetizador ambiental en Re Menor, efectos de sonido de teclado mecánico, blips digitales de conexión API, alarma hidrológica suave a t=58s, chirridos de ruteo Dijkstra y locución neural en español peruano `es-PE-AlexNeural`) adopta la estética de **terminal de consola de ingeniería @status200mx en pantalla completa 16:9 widescreen**: fondo negro obsidiana (`#070A0F`), retícula de puntos de ingeniería (Dot Grid), tarjetas flotantes redondeadas con chips de estado (`[ API ]`, `✓ activo`, `● CRÍTICO`), y un **mapa táctico vectorial en tiempo real** que proyecta la cuenca del Río Moche y muestra el desvío vehicular dinámico por la carretera alterna PE-10A tras el huaico.
+Tienes a tu disposición **3 versiones de video de presentación técnica en alta definición (1080p Full HD)**, optimizadas para los jurados de la hackathon:
 
-### 📸 Galería del Storyboard @status200mx & Mapa Táctico (2:00 Minutos Exactos):
+| Versión de Pitch | Estilo Visual y Características | Archivo de Video | Script Generador |
+| :--- | :--- | :--- | :--- |
+| **1. Terminal Consola Minimalista (Principal)** | Fondo negro puro, tipografía verde/blanca audaz, animaciones rápidas de tipeo, cajas de conexión API (SENAMHI, NASA, Copernicus), temporizador 72h y locución peruana `es-PE-AlexNeural`. | [`kyberna_ia_pitch_2min.mp4`](kyberna_ia_pitch_2min.mp4)<br/>*(5.45 MB · 120.0s exactos)* | [`render_terminal_pitch_video.py`](render_terminal_pitch_video.py) |
+| **2. Consola @status200mx + Mapa Táctico** | Retícula Dot Grid, tarjetas flotantes de cristal, chips de estado y **Mapa Táctico en Tiempo Real** que proyecta la Cuenca del Río Moche y el desvío dinámico por la ruta alterna PE-10A. | [`kyberna_ia_pitch_status200_16x9.mp4`](kyberna_ia_pitch_status200_16x9.mp4)<br/>*(4.76 MB · 120.0s exactos)* | [`render_status200_pitch_video.py`](render_status200_pitch_video.py) |
+| **3. Motion Graphics UI Walkthrough** | Estilo cinemático con capturas reales de la aplicación web, recorrido guiado de las 4 etapas del pipeline, mapas Leaflet y panel de monetización B2G/B2B. | [`kyberna_ia_pitch_ui_walkthrough.mp4`](kyberna_ia_pitch_ui_walkthrough.mp4)<br/>*(24.7 MB · 133.0s)* | [`render_pitch_video_2min_hq.py`](render_pitch_video_2min_hq.py) |
+
+### 📸 Galería del Storyboard Terminal Consola (2:00 Minutos Exactos):
 
 | Acto 1: El Problema (0:00 - 0:15) | Acto 2: La Solución Kyberna IA (0:15 - 0:45) |
 | :---: | :---: |
-| ![Acto 1 Status200](docs/images/status200_act1.jpg) | ![Acto 2 Status200](docs/images/status200_act2.jpg) |
-| *«Cuando el clima cambia... el tiempo de respuesta es vital». Temporizador rojo contando de 0 a 72:00:00 con monitor de ritmo cardíaco (ECG).* | *Logo verde Kyberna IA con barra de estado de consola y conexiones API con chips flotantes a SENAMHI, NASA EONET y Copernicus.* |
+| ![Acto 1 Terminal](docs/images/terminal_pitch_act1.jpg) | ![Acto 2 Terminal](docs/images/terminal_pitch_act2.jpg) |
+| *«Cuando el clima cambia... el tiempo de respuesta es vital». Temporizador rojo contando de 0 a 72 Horas.* | *Logo verde de Kyberna IA y conexión API con blips a SENAMHI, NASA EONET y Copernicus.* |
 
-| Acto 3: El Funcionamiento - Monitoreo (0:45 - 1:15) | Acto 4: NLP y Mapa Táctico en Tiempo Real (1:15 - 1:45) |
+| Acto 3: El Funcionamiento - Monitoreo (0:45 - 1:15) | Acto 4: NLP y Respuesta Logística (1:15 - 1:45) |
 | :---: | :---: |
-| ![Acto 3 Status200](docs/images/status200_act3.jpg) | ![Acto 4 Status200](docs/images/status200_act4.jpg) |
-| *Vigilancia pasiva en verde que transiciona súbitamente a ALERTA ROJA por lluvia > 50mm (68.5mm / 477 m³/s en Estación Quirihuac).* | *Filtrado NLP de reportes WhatsApp (95% credibilidad) y **Mapa Táctico en Vivo**: Puente Moche bloqueado y recálculo Dijkstra por PE-10A Laredo.* |
+| ![Acto 3 Terminal](docs/images/terminal_pitch_act3.jpg) | ![Acto 4 Terminal](docs/images/terminal_pitch_act4.jpg) |
+| *Vigilancia pasiva en verde que transiciona súbitamente a ALERTA ROJA por lluvia > 50mm (68.5mm / 477 m³/s).* | *Reportes WhatsApp filtrados con NLP (95% credibilidad) y recálculo instantáneo por desvío PE-10A (Dijkstra).* |
 
 <div align="center">
 
 ### Acto 5: El Futuro y Cierre del Pitch (1:45 - 2:00)
-![Acto 5 Status200](docs/images/status200_act5.jpg)  
-*Ecosistema modular expandido (Agente Salud, Marítimo, Drones, B2B) y cierre institucional para la **Hackathon UPN IA+ 2026**.*
+![Acto 5 Terminal](docs/images/terminal_pitch_act5.jpg)  
+*Ecosistema modular expandido (Salud, Marítimo, Drones, B2B) y cierre institucional para la **Hackathon UPN IA+ 2026**.*
 
 </div>
 
-📁 **Archivo de Video:** [`kyberna_ia_pitch_2min.mp4`](kyberna_ia_pitch_2min.mp4) (4.76 MB, 1080p Full HD, 30fps, 120.0s)  
-🛠️ **Scripts del Pipeline:**
-- Motor de Video @status200mx + Mapa Táctico: [`render_status200_pitch_video.py`](render_status200_pitch_video.py)
-- Sintetizador de Audio, SFX & Locución Neural: [`generate_pitch_soundtrack.py`](generate_pitch_soundtrack.py)
-- Motor Alternativo de Consola Minimalista: [`render_terminal_pitch_video.py`](render_terminal_pitch_video.py)
-- Motor Motion Graphics Hypeframe: [`render_hypeframe_pitch_video.py`](render_hypeframe_pitch_video.py)
+🛠️ **Sintetizador de Audio Maestro & Locución Neural:** [`generate_pitch_soundtrack.py`](generate_pitch_soundtrack.py)
 
 ---
 
