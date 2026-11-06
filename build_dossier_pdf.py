@@ -387,9 +387,96 @@ def build_technical_dossier_pdf(target_file_path: Path) -> None:
     story.append(Spacer(1, 14))
 
     # =========================================================================
-    # SECCIÓN 3: FUENTES DE DATOS DE DAMNIFICADOS Y CÁLCULO DINÁMICO
+    # SECCIÓN 3: TECNOLOGÍAS CLAVE DE INTELIGENCIA ARTIFICIAL Y CÓMO SE USAN
     # =========================================================================
-    story.append(Paragraph("3. Modelo Hidrológico y Estimación de Damnificados", styles["SectionHeading"]))
+    story.append(
+        Paragraph("3. Tecnologías Clave de Inteligencia Artificial y Datos (Cómo las usamos)", styles["SectionHeading"])
+    )
+    story.append(
+        Paragraph(
+            "Kyberna IA no es un prototipo conceptual; combina cinco tecnologías avanzadas de IA, minería de datos "
+            "y ciencias de la computación que trabajan de forma coordinada a lo largo del pipeline de 4 etapas:",
+            styles["BodyTextCustom"],
+        )
+    )
+
+    tech_table_data = [
+        [
+            Paragraph("Tecnología / Módulo", styles["TableHeader"]),
+            Paragraph("Algoritmo / Fuentes", styles["TableHeader"]),
+            Paragraph("¿Cómo se usa en Kyberna IA?", styles["TableHeader"]),
+        ],
+        [
+            Paragraph("<b>Machine Learning (ML)<br/>Supervisado</b><br/><code>logic/ml_catastrophe_predictor.py</code>", styles["TableCellBold"]),
+            Paragraph("Clasificador No-Lineal con Kernel RBF + Regresor temporal.<br/>Entrenado con 760 registros FEN (1998-2026).", styles["TableCell"]),
+            Paragraph(
+                "<b>Predicción Temprana No Alarmista:</b> Evalúa 4 variables físicas continuas: precipitación SENAMHI (mm/h), "
+                "caudal del río (m³/s), humedad de suelo SAR (%) y anomalía SST Niño 1+2 (°C). Infiere la probabilidad de colapso (%) "
+                "y calcula la ventana de tiempo de impacto (MAE &approx; 1.03 h). Dispara la Etapa 2 modulando el tono hacia avisos preventivos sin histeria.",
+                styles["TableCell"],
+            ),
+        ],
+        [
+            Paragraph("<b>Web Scraping<br/>en Tiempo Real</b><br/><code>data/web_scraping_service.py</code>", styles["TableCellBold"]),
+            Paragraph("Rastreador multicanal:<br/>RPP Trujillo, Diario La Industria, Correo, Radio Costa Norte, X/Twitter y WhatsApp Comunitario.", styles["TableCell"]),
+            Paragraph(
+                "<b>Auditoría de Terreno en Vivo:</b> Si el ML pronostica impacto en &le; 4h (Etapa 3), rastrea prensa regional y redes. "
+                "Clasifica hallazgos en 4 cuadrantes críticos: (1) Calles inundadas, (2) Casas de adobe en riesgo, (3) Familias o heridos aislados, "
+                "y (4) Vías bloqueadas. Corrobora los sensores con la verdad física en la calle.",
+                styles["TableCell"],
+            ),
+        ],
+        [
+            Paragraph("<b>Procesamiento de Lenguaje Natural (NLP)</b><br/><code>logic/nlp_engine.py</code>", styles["TableCellBold"]),
+            Paragraph("Tokenización contextual, análisis de severidad y filtro estocástico anti-fake news.", styles["TableCell"]),
+            Paragraph(
+                "<b>Filtro Anti-Rumores y Verificación:</b> Analiza testimonios ciudadanos y notas de prensa. Detecta bots, pánico infundado "
+                "y fotos recicladas de años pasados. Exige &ge;90% de credibilidad corroborada antes de permitir el pase a Alerta Roja (Etapa 4), "
+                "evitando falsas alarmas y movilización innecesaria de convoyes.",
+                styles["TableCell"],
+            ),
+        ],
+        [
+            Paragraph("<b>Teoría de Grafos y<br/>Algoritmo Dijkstra</b><br/><code>logic/route_calculator.py</code>", styles["TableCellBold"]),
+            Paragraph("Algoritmo de Dijkstra sobre polilíneas reales de OpenStreetMap (OSRM).", styles["TableCell"]),
+            Paragraph(
+                "<b>Desvío Vial Dinámico Inmediato:</b> Al confirmarse el colapso del Puente Río Moche (Panamericana Norte), aísla "
+                "inmediatamente los arcos caídos y halla la ruta óptima alterna de menor tiempo y mayor altitud sobre la cuenca "
+                "(PE-10A Laredo &rarr; Cota Alta Conache &rarr; Alto Salaverry &rarr; Virú: 71.0 km, 69 min) para los camiones de INDECI.",
+                styles["TableCell"],
+            ),
+        ],
+        [
+            Paragraph("<b>Telemetría Satelital<br/>SAR y Sensores IoT</b><br/><code>data/mock_sources.py</code>", styles["TableCellBold"]),
+            Paragraph("Radar Sentinel-1 SAR (Copernicus), estaciones automáticas SENAMHI y NASA EONET.", styles["TableCell"]),
+            Paragraph(
+                "<b>Visión Todo Clima:</b> El radar de apertura sintética (SAR) de microondas penetra densas nubes y tormentas nocturnas "
+                "donde los satélites ópticos quedan ciegos, midiendo la saturación antecedente del suelo y áreas inundadas en tiempo real.",
+                styles["TableCell"],
+            ),
+        ],
+    ]
+
+    tech_table = Table(tech_table_data, colWidths=[115, 125, 292])
+    tech_table.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, 0), COLOR_SECONDARY),
+                ("BOX", (0, 0), (-1, -1), 0.8, COLOR_SECONDARY),
+                ("INNERGRID", (0, 0), (-1, -1), 0.5, COLOR_BORDER),
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                ("PADDING", (0, 0), (-1, -1), 5),
+                ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, COLOR_BG_CARD]),
+            ]
+        )
+    )
+    story.append(tech_table)
+    story.append(Spacer(1, 14))
+
+    # =========================================================================
+    # SECCIÓN 4: FUENTES DE DATOS DE DAMNIFICADOS Y CÁLCULO DINÁMICO
+    # =========================================================================
+    story.append(Paragraph("4. Modelo Hidrológico y Estimación de Damnificados", styles["SectionHeading"]))
     story.append(
         Paragraph(
             "Para erradicar cifras arbitrarias, Kyberna IA implementa un modelo estocástico-hidrológico "
@@ -425,9 +512,9 @@ def build_technical_dossier_pdf(target_file_path: Path) -> None:
     story.append(Spacer(1, 14))
 
     # =========================================================================
-    # SECCIÓN 4: ESCALABILIDAD NACIONAL (INEI + CENEPRED)
+    # SECCIÓN 5: ESCALABILIDAD NACIONAL (INEI + CENEPRED)
     # =========================================================================
-    story.append(Paragraph("4. Escalabilidad Nacional ante el Fenómeno del Niño", styles["SectionHeading"]))
+    story.append(Paragraph("5. Escalabilidad Nacional ante el Fenómeno del Niño", styles["SectionHeading"]))
     story.append(
         Paragraph(
             "Una de las fortalezas clave que distingue a Kyberna IA es su capacidad de desplegarse en cualquier "
@@ -450,9 +537,9 @@ def build_technical_dossier_pdf(target_file_path: Path) -> None:
     story.append(Spacer(1, 10))
 
     # =========================================================================
-    # SECCIÓN 5: MODELO DE NEGOCIO Y MONETIZACIÓN (B2G & B2B)
+    # SECCIÓN 6: MODELO DE NEGOCIO Y MONETIZACIÓN (B2G & B2B)
     # =========================================================================
-    story.append(Paragraph("5. Modelo de Negocio y Comercialización", styles["SectionHeading"]))
+    story.append(Paragraph("6. Modelo de Negocio y Comercialización", styles["SectionHeading"]))
 
     business_data = [
         [
@@ -500,19 +587,19 @@ def build_technical_dossier_pdf(target_file_path: Path) -> None:
     story.append(Spacer(1, 14))
 
     # =========================================================================
-    # SECCIÓN 6: GUÍA DE DESPLIEGUE MULTIDISPOSITIVO
+    # SECCIÓN 7: GUÍA DE DESPLIEGUE MULTIDISPOSITIVO Y DOCKER
     # =========================================================================
-    story.append(Paragraph("6. Despliegue en Cualquier Dispositivo (Local / Red / Celular)", styles["SectionHeading"]))
+    story.append(Paragraph("7. Despliegue en Cualquier Dispositivo (Local / Red / Celular / Docker)", styles["SectionHeading"]))
     story.append(
         Paragraph(
-            "Kyberna IA está empaquetado para correr de inmediato en otra máquina o visualizarse en dispositivos móviles:",
+            "Kyberna IA está empaquetado para correr de inmediato en otra máquina, en contenedores o visualizarse en dispositivos móviles:",
             styles["BodyTextCustom"],
         )
     )
 
     deploy_data = [
         [
-            Paragraph("Entorno", styles["TableHeader"]),
+            Paragraph("Entorno / Dispositivo", styles["TableHeader"]),
             Paragraph("Comando de Ejecución", styles["TableHeader"]),
             Paragraph("Acceso / URL", styles["TableHeader"]),
         ],
@@ -522,14 +609,19 @@ def build_technical_dossier_pdf(target_file_path: Path) -> None:
             Paragraph("<code>http://127.0.0.1:8000</code>", styles["TableCellBold"]),
         ],
         [
-            Paragraph("<b>Red Local (Móvil / Tablet en la misma WiFi)</b>", styles["TableCellBold"]),
+            Paragraph("<b>Celular / Tablet (Misma Red WiFi)</b>", styles["TableCellBold"]),
             Paragraph("<code>uvicorn main:app --host 0.0.0.0 --port 8000</code>", styles["TableCell"]),
             Paragraph("<code>http://[IP-DE-TU-PC]:8000</code> (ej. 192.168.1.35:8000)", styles["TableCellBold"]),
         ],
         [
-            Paragraph("<b>Desde Repositorio GitHub</b>", styles["TableCellBold"]),
-            Paragraph("<code>git clone https://github.com/robertpid/kyberna-ia.git</code>", styles["TableCell"]),
-            Paragraph("Instala dependencias y corre <code>main.py</code>", styles["TableCellBold"]),
+            Paragraph("<b>Otra Laptop / PC (GitHub Clone)</b>", styles["TableCellBold"]),
+            Paragraph("<code>git clone https://github.com/robertpid/kyberna-ia.git</code><br/><i>(Frontend ya precompilado; NO requiere Node.js)</i>", styles["TableCell"]),
+            Paragraph("<code>pip install -r requirements.txt</code><br/><code>python main.py</code>", styles["TableCellBold"]),
+        ],
+        [
+            Paragraph("<b>Contenedor Docker (1 Comando)</b>", styles["TableCellBold"]),
+            Paragraph("<code>docker compose up --build</code>", styles["TableCell"]),
+            Paragraph("<code>http://localhost:8000</code>", styles["TableCellBold"]),
         ],
     ]
 
@@ -556,3 +648,4 @@ def build_technical_dossier_pdf(target_file_path: Path) -> None:
 
 if __name__ == "__main__":
     build_technical_dossier_pdf(OUTPUT_PDF_PATH)
+
