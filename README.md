@@ -61,35 +61,38 @@
 
 ## 🎬 Videos Pitch Oficiales para Hackathon UPN IA+ 2026
 
-Tienes a tu disposición **3 versiones de video de presentación técnica en alta definición (1080p Full HD)**, optimizadas para los jurados de la hackathon:
+Tienes a tu disposición **4 versiones de video de presentación técnica en alta definición (1080p Full HD)** y una **aplicación web interactiva HTML-Demo**:
 
-| Versión de Pitch | Estilo Visual y Características | Archivo de Video | Script Generador |
+> 💡 **Demo Web Interactivo en Vivo:** Abre [`html_demo/index.html`](html_demo/index.html) directamente en tu navegador o ingresa a `http://localhost:8000/demo` para explorar la simulación interactiva paso a paso con locución sincronizada y cursor animado.
+
+| Versión de Pitch | Estilo Visual y Características Clave | Archivo de Video | Script Generador |
 | :--- | :--- | :--- | :--- |
-| **1. Terminal Consola Minimalista (Principal)** | Fondo negro puro, tipografía verde/blanca audaz, animaciones rápidas de tipeo, cajas de conexión API (SENAMHI, NASA, Copernicus), temporizador 72h y locución peruana `es-PE-AlexNeural`. | [`kyberna_ia_pitch_2min.mp4`](kyberna_ia_pitch_2min.mp4)<br/>*(5.45 MB · 120.0s exactos)* | [`render_terminal_pitch_video.py`](render_terminal_pitch_video.py) |
-| **2. Consola @status200mx + Mapa Táctico** | Retícula Dot Grid, tarjetas flotantes de cristal, chips de estado y **Mapa Táctico en Tiempo Real** que proyecta la Cuenca del Río Moche y el desvío dinámico por la ruta alterna PE-10A. | [`kyberna_ia_pitch_status200_16x9.mp4`](kyberna_ia_pitch_status200_16x9.mp4)<br/>*(4.76 MB · 120.0s exactos)* | [`render_status200_pitch_video.py`](render_status200_pitch_video.py) |
-| **3. Motion Graphics UI Walkthrough** | Estilo cinemático con capturas reales de la aplicación web, recorrido guiado de las 4 etapas del pipeline, mapas Leaflet y panel de monetización B2G/B2B. | [`kyberna_ia_pitch_ui_walkthrough.mp4`](kyberna_ia_pitch_ui_walkthrough.mp4)<br/>*(24.7 MB · 133.0s)* | [`render_pitch_video_2min_hq.py`](render_pitch_video_2min_hq.py) |
+| **1. HTML-Demo & ML Predictivo (Principal)** | Ventana Mac interactiva sobre fondo obsidian con Dot Grid. **Sin tiempos muertos**, con locución continua y **explicación a fondo del Ensamble de Machine Learning (Random Forest)**, variables $X_1..X_5$, lead time de 38 min y recálculo en vivo con Dijkstra. | [`kyberna_ia_pitch_2min.mp4`](kyberna_ia_pitch_2min.mp4)<br/>*(11.3 MB · 120.0s exactos)* | [`render_html_demo_video.py`](render_html_demo_video.py) |
+| **2. Consola @status200mx + Mapa Táctico** | Retícula de ingeniería Dot Grid, tarjetas flotantes de cristal, chips técnicos y **Mapa Táctico en Tiempo Real** que proyecta la Cuenca del Río Moche y el desvío dinámico por la ruta alterna PE-10A. | [`kyberna_ia_pitch_status200_16x9.mp4`](kyberna_ia_pitch_status200_16x9.mp4)<br/>*(4.76 MB · 120.0s exactos)* | [`render_status200_pitch_video.py`](render_status200_pitch_video.py) |
+| **3. Terminal Consola Minimalista** | Fondo negro puro, tipografía verde/blanca audaz, animaciones rápidas de tipeo, cajas de conexión API (SENAMHI, NASA, Copernicus) y temporizador de 72 horas. | [`kyberna_ia_pitch_terminal_consola.mp4`](kyberna_ia_pitch_terminal_consola.mp4)<br/>*(5.45 MB · 120.0s exactos)* | [`render_terminal_pitch_video.py`](render_terminal_pitch_video.py) |
+| **4. Motion Graphics UI Walkthrough** | Estilo cinemático con capturas reales de la aplicación web, recorrido guiado de las 4 etapas del pipeline, mapas Leaflet y panel de monetización B2G/B2B. | [`kyberna_ia_pitch_ui_walkthrough.mp4`](kyberna_ia_pitch_ui_walkthrough.mp4)<br/>*(24.7 MB · 133.0s)* | [`render_pitch_video_2min_hq.py`](render_pitch_video_2min_hq.py) |
 
-### 📸 Galería del Storyboard Terminal Consola (2:00 Minutos Exactos):
+### 📸 Galería del Storyboard HTML-Demo con Explicación de Machine Learning (2:00 Minutos):
 
-| Acto 1: El Problema (0:00 - 0:15) | Acto 2: La Solución Kyberna IA (0:15 - 0:45) |
+| Acto 1: Crisis y Latencia (0:00 - 0:20) | Acto 2: Telemetría IoT & Satelital (0:20 - 0:44) |
 | :---: | :---: |
-| ![Acto 1 Terminal](docs/images/terminal_pitch_act1.jpg) | ![Acto 2 Terminal](docs/images/terminal_pitch_act2.jpg) |
-| *«Cuando el clima cambia... el tiempo de respuesta es vital». Temporizador rojo contando de 0 a 72 Horas.* | *Logo verde de Kyberna IA y conexión API con blips a SENAMHI, NASA EONET y Copernicus.* |
+| ![Acto 1 HTML-Demo](docs/images/htmldemo_act1.jpg) | ![Acto 2 HTML-Demo](docs/images/htmldemo_act2.jpg) |
+| *«Cuando el clima cambia... el tiempo de respuesta es vital». Conteo oficial de 72h, monitor de damnificados y parálisis logística.* | *Sensores en tiempo real: Pluviómetro Quirihuac (68.5 mm), Caudal (477 m³/s), Sentinel-1 (SSI 88%) y NASA EONET.* |
 
-| Acto 3: El Funcionamiento - Monitoreo (0:45 - 1:15) | Acto 4: NLP y Respuesta Logística (1:15 - 1:45) |
+| Acto 3: Núcleo de Machine Learning (0:44 - 1:14) | Acto 4: NLP y Mapa Táctico Dijkstra (1:14 - 1:43) |
 | :---: | :---: |
-| ![Acto 3 Terminal](docs/images/terminal_pitch_act3.jpg) | ![Acto 4 Terminal](docs/images/terminal_pitch_act4.jpg) |
-| *Vigilancia pasiva en verde que transiciona súbitamente a ALERTA ROJA por lluvia > 50mm (68.5mm / 477 m³/s).* | *Reportes WhatsApp filtrados con NLP (95% credibilidad) y recálculo instantáneo por desvío PE-10A (Dijkstra).* |
+| ![Acto 3 Machine Learning](docs/images/htmldemo_act3_ml.jpg) | ![Acto 4 Dijkstra](docs/images/htmldemo_act4_dijkstra.jpg) |
+| *<b>Explicación ML a Fondo:</b> Ensamble Random Forest entrenado con FEN 1997-2023. Feature Importance (Lluvia 42%, Caudal 28%, SSI 18%), Inferencia 94.8% (Crítico) y Lead Time ETA de 38 minutos antes de impacto.* | *Auditoría NLP de reportes WhatsApp (95% credibilidad, filtrado anti-fake news) y <b>Mapa Táctico en Vivo</b> con desvío seguro por la PE-10A Laredo.* |
 
 <div align="center">
 
-### Acto 5: El Futuro y Cierre del Pitch (1:45 - 2:00)
-![Acto 5 Terminal](docs/images/terminal_pitch_act5.jpg)  
-*Ecosistema modular expandido (Salud, Marítimo, Drones, B2B) y cierre institucional para la **Hackathon UPN IA+ 2026**.*
+### Acto 5: Suministros Humanitarios EDAN y Cierre (1:43 - 2:00)
+![Acto 5 Cierre](docs/images/htmldemo_act5.jpg)  
+*Cálculo instantáneo de raciones EDAN/SPHERE (4,250 damnificados, 12.8 toneladas de agua/víveres, 6 camiones despachados) y cierre institucional para la **Hackathon UPN IA+ 2026**.*
 
 </div>
 
-🛠️ **Sintetizador de Audio Maestro & Locución Neural:** [`generate_pitch_soundtrack.py`](generate_pitch_soundtrack.py)
+🛠️ **Sintetizador de Audio Maestro & Locución Neural Continua:** [`generate_html_demo_soundtrack.py`](generate_html_demo_soundtrack.py)
 
 ---
 

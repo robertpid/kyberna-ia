@@ -279,6 +279,14 @@ def create_kyberna_web_app() -> FastAPI:
             name="react-assets",
         )
 
+    demo_dir = Path(__file__).resolve().parent.parent / "html_demo"
+    if demo_dir.exists():
+        web_app.mount(
+            "/demo",
+            StaticFiles(directory=str(demo_dir), html=True),
+            name="html-demo",
+        )
+
     @web_app.get("/", include_in_schema=False)
     def serve_dashboard_index() -> FileResponse:
         """Sirve el bundle compilado en React del Panel de Vigilancia y Mapa Leaflet."""

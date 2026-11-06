@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "html-demo": {
+      "source": "MengTo/Skills",
+      "sourceType": "github",
+      "skillPath": "agent-skills/web-design/html-demo/SKILL.md",
+      "computedHash": "5b03c381965e4201c83e1b9efcc73f91df0a242d9928095007a2a6246a5119ee"
+    }
+  }
+}

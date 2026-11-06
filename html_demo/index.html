@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kyberna IA — Centro de Mando Logístico Inteligente (Demo Interactivo HTML)</title>
+  <meta name="description" content="Simulación interactiva paso a paso del pipeline autónomo de Kyberna IA y su modelo de Machine Learning ante el Fenómeno del Niño." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="step-window.css" />
+  <style>
+    :root {
+      --bg: #070A0F;
+      --card-bg: rgba(14, 18, 27, 0.85);
+      --border-line: rgba(255, 255, 255, 0.10);
+      --accent-green: #00FF66;
+      --accent-cyan: #00E5FF;
+      --accent-red: #FF3B30;
+      --accent-yellow: #FFCC00;
+      --text-main: #FFFFFF;
+      --text-muted: #8E9BAE;
+      --hd-font: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --hd-mono: 'Geist Mono', Consolas, monospace;
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: var(--hd-font);
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 32px 32px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 16px 60px;
+    }
+    header {
+      width: min(1200px, 100%);
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand-group h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-group h1 span.badge {
+      font-family: var(--hd-mono);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(0, 255, 102, 0.12);
+      border: 1px solid rgba(0, 255, 102, 0.35);
+      color: var(--accent-green);
+      font-weight: 600;
+    }
+    .brand-group p {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .audio-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-audio {
+      background: rgba(0, 255, 102, 0.15);
+      border: 1px solid var(--accent-green);
+      color: #FFFFFF;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: var(--hd-font);
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-audio:hover {
+      background: rgba(0, 255, 102, 0.25);
+      transform: translateY(-1px);
+    }
+    .demo-container {
+      width: min(1200px, 100%);
+    }
+
+    /* Estilos específicos de las etapas en 1200x750 */
+    .k-stage {
+      position: absolute;
+      inset: 0;
+      width: 1200px;
+      height: 750px;
+      padding: 24px 32px;
+      display: flex;
+      flex-direction: column;
+      background: #070A0F;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
+      background-size: 32px 32px;
+      overflow: hidden;
+    }
+    .k-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+    .k-header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .k-tag {
+      font-family: var(--hd-mono);
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .k-tag-green { background: rgba(0,255,102,0.12); color: var(--accent-green); border: 1px solid rgba(0,255,102,0.3); }
+    .k-tag-red { background: rgba(255,59,48,0.15); color: var(--accent-red); border: 1px solid rgba(255,59,48,0.35); }
+    .k-tag-cyan { background: rgba(0,229,255,0.12); color: var(--accent-cyan); border: 1px solid rgba(0,229,255,0.3); }
+    .k-tag-yellow { background: rgba(255,204,0,0.12); color: var(--accent-yellow); border: 1px solid rgba(255,204,0,0.3); }
+
+    .k-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex: 1; }
+    .k-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+    .k-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-line);
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .k-card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .k-metric-value {
+      font-family: var(--hd-mono);
+      font-size: 38px;
+      font-weight: 700;
+      margin: 8px 0;
+    }
+    .k-bar-wrapper {
+      height: 8px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .k-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.1s linear;
+    }
+
+    /* Vector Map styling */
+    .map-canvas-box {
+      width: 100%;
+      height: 100%;
+      background: #05070B;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decision tree and feature importance styling */
+    .feature-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      margin: 8px 0;
+    }
+    .feature-name {
+      width: 210px;
+      color: var(--text-muted);
+      font-family: var(--hd-mono);
+    }
+    .feature-bar-container {
+      flex: 1;
+      height: 12px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 0 12px;
+    }
+    .feature-pct {
+      width: 45px;
+      text-align: right;
+      font-family: var(--hd-mono);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand-group">
+      <h1>🌊 Kyberna IA <span class="badge">N-CAPAS v2.6.0</span></h1>
+      <p>Centro de Mando Logístico Autónomo ante el Fenómeno del Niño · Hackathon UPN IA+ 2026</p>
+    </div>
+    <div class="audio-controls">
+      <audio id="soundtrack" src="audio.mp3" preload="auto"></audio>
+      <button class="btn-audio" id="audioToggleBtn" onclick="toggleAudio()">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        <span id="audioBtnText">Activar Locución (120s)</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="demo-container">
+    <div id="demo-mount"></div>
+  </div>
+
+  <script src="step-window.js"></script>
+  <script>
+    const audio = document.getElementById('soundtrack');
+    const audioBtnText = document.getElementById('audioBtnText');
+    let isPlayingAudio = false;
+
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play().then(() => {
+          isPlayingAudio = true;
+          audioBtnText.textContent = "Pausar Locución";
+        }).catch(e => console.error("Audio error:", e));
+      } else {
+        audio.pause();
+        isPlayingAudio = false;
+        audioBtnText.textContent = "Reanudar Locución";
+      }
+    }
+
+    // Definición de las 5 Etapas del HTML Demo (120s en total)
+    const STEPS = [
+      {
+        id: 'crisis',
+        name: '1. Crisis y Latencia 72h',
+        dur: 20,
+        html: `
+          <div class="k-stage">
+            <div class="k-header-row">
+              <div class="k-header-left">
+                <span class="k-tag k-tag-red">● EMERGENCIA FENÓMENO DEL NIÑO</span>
+                <span style="color:#8E9BAE; font-size:13px; font-family:var(--hd-mono);">Cuenca del Río Moche · La Libertad</span>
+              </div>
+              <div style="font-family:var(--hd-mono); font-size:13px; color:#FF3B30;" id="c1-clock">LATENCIA OFICIAL: 00:00:00</div>
+            </div>
+            <div class="k-grid-2">
+              <div class="k-card">
+                <div class="k-card-title">
+                  <span>El Problema Logístico Actual</span>
+                  <span class="k-tag k-tag-red">48 - 72 HORAS</span>
+                </div>
+                <p style="font-size:14px; color:#C3C6CC; line-height:1.6;">
+                  Ante desbordes y huaicos, la evaluación oficial de daños mediante ficha <b>EDAN</b> tarda entre 48 y 72 horas. Durante este intervalo, los convoyes humanitarios quedan varados y las familias sufren desabastecimiento crítico.
+                </p>
+                <div style="margin-top:auto;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px; color:#8E9BAE; font-family:var(--hd-mono);">
+                    <span>Tiempo de Reacción Convencional</span>
+                    <span id="c1-hours" style="color:#FF3B30; font-weight:700;">72 HORAS</span>
+                  </div>
+                  <div class="k-bar-wrapper">
+                    <div id="c1-bar" class="k-bar-fill" style="background:#FF3B30; width:0%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="k-card">
+                <div class="k-card-title">
+                  <span>Monitor de Vulnerabilidad y Daños</span>
+                  <span class="k-tag k-tag-yellow">INDECI / CENEPRED</span>
+                </div>
+                <div class="k-metric-value" style="color:#FFCC00;" id="c1-risk">ALTO RIESGO</div>
+                <p style="font-size:13px; color:#8E9BAE;">Población expuesta estimada en Trujillo y cuenca baja: <b>85,000 habitantes</b>. Puentes críticos no monitoreados.</p>
+                <div style="margin-top:auto; padding:12px; background:rgba(255,255,255,0.03); border-radius:8px; border:1px solid rgba(255,255,255,0.06); font-family:var(--hd-mono); font-size:12px;">
+                  <div style="color:#00FF66;">> Kyberna IA Objetivo: Reducir 72h al Minuto Cero.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `,
+        draw(t, $) {
+          const progress = Math.min(1, t / 18);
+          const currentHours = Math.floor(progress * 72);
+          const currentMins = Math.floor((progress * 72 * 60) % 60);
+          const currentSecs = Math.floor((progress * 72 * 3600) % 60);
+          
+          const timeStr = String(currentHours).padStart(2, '0') + ':' + 
+                          String(currentMins).padStart(2, '0') + ':' + 
+                          String(currentSecs).padStart(2, '0');
+          
+          $('#c1-clock').textContent = `LATENCIA OFICIAL: ${timeStr} / 72:00:00`;
+          $('#c1-hours').textContent = `${currentHours} HORAS DE PARÁLISIS`;
+          $('#c1-bar').style.width = `${progress * 100}%`;
+          
+          return {
+            cursor: {
+              x: 600 + Math.sin(t) * 80,
+              y: 400 + Math.cos(t) * 40,
+              press: t > 10 && t < 10.3
+            }
+          };
+        }
+      },
+      {
+        id: 'telemetry',
+        name: '2. Telemetría IoT & Satelital',
+        dur: 24,
+        html: `
+          <div class="k-stage">
+            <div class="k-header-row">
+              <div class="k-header-left">
+                <span class="k-tag k-tag-cyan">● INGESTA MULTIFUENTE EN VIVO</span>
+                <span style="color:#8E9BAE; font-size:13px; font-family:var(--hd-mono);">SENAMHI · NASA EONET · Copernicus Sentinel-1</span>
+              </div>
+              <span class="k-tag k-tag-green">ESTADO: VIGILANCIA PASIVA</span>
+            </div>
+            <div class="k-grid-3">
+              <div class="k-card">
+                <div class="k-card-title">
+                  <span>Estación Quirihuac</span>
+                  <span class="k-tag k-tag-green">[ 200 OK ]</span>
+                </div>
+                <div style="font-size:12px; color:#8E9BAE;">Pluviómetro Automático SENAMHI</div>
+                <div class="k-metric-value" style="color:#00E5FF;" id="c2-rain">18.5 mm</div>
+                <div class="k-bar-wrapper">
+                  <div id="c2-rain-bar" class="k-bar-fill" style="background:#00E5FF; width:25%;"></div>
+                </div>
+                <div style="font-size:11px; color:#8E9BAE; margin-top:8px;">Umbral Crítico: > 50 mm/24h</div>
+              </div>
+              <div class="k-card">
+                <div class="k-card-title">
+                  <span>Caudal Río Moche</span>
+                  <span class="k-tag k-tag-green">[ 200 OK ]</span>
+                </div>
+                <div style="font-size:12px; color:#8E9BAE;">Sensor Hidrométrico Quirihuac</div>
+                <div class="k-metric-value" style="color:#00FF66;" id="c2-flow">120 m³/s</div>
+                <div class="k-bar-wrapper">
+                  <div id="c2-flow-bar" class="k-bar-fill" style="background:#00FF66; width:30%;"></div>
+                </div>
+                <div style="font-size:11px; color:#8E9BAE; margin-top:8px;">Caudal de Desborde: 400 m³/s</div>
+              </div>
+              <div class="k-card">
+                <div class="k-card-title">
+                  <span>Copernicus Sentinel-1</span>
+                  <span class="k-tag k-tag-green">[ SAR RADAR ]</span>
+                </div>
+                <div style="font-size:12px; color:#8E9BAE;">Saturación de Suelo Hídrico (SSI)</div>
+                <div class="k-metric-value" style="color:#FFCC00;" id="c2-ssi">45%</div>
+                <div class="k-bar-wrapper">
+                  <div id="c2-ssi-bar" class="k-bar-fill" style="background:#FFCC00; width:45%;"></div>
+                </div>
+                <div style="font-size:11px; color:#8E9BAE; margin-top:8px;">Punto de Licuefacción: > 80%</div>
+              </div>
+            </div>
+            <div class="k-card" style="margin-top:20px; flex:1;">
+              <div class="k-card-title">
+                <span>Canal de Datos Abiertos y Detección de Eventos Extremos</span>
+                <span class="k-tag k-tag-cyan">NASA EONET ID: EONET_6412</span>
+              </div>
+              <p style="font-size:13px; color:#C3C6CC; line-height:1.5;">
+                Kyberna sondea cada 15 minutos sin intervención humana. Si las precipitaciones acumuladas y el caudal superan los umbrales de seguridad, el orquestador activa la <b>Etapa 2: Análisis Predictivo de Machine Learning</b>.
+              </p>
+              <div style="display:flex; gap:16px; margin-top:auto;">
+                <div style="padding:10px 16px; background:rgba(0,255,102,0.08); border-radius:8px; border:1px solid rgba(0,255,102,0.2); font-family:var(--hd-mono); font-size:12px;">
+                  ✓ Polling activo en cuenca Moche (14 estaciones)
+                </div>
+                <div style="padding:10px 16px; background:rgba(0,229,255,0.08); border-radius:8px; border:1px solid rgba(0,229,255,0.2); font-family:var(--hd-mono); font-size:12px;">
+                  ✓ Anomalía Térmica SST Niño 1+2: +2.8 °C
+                </div>
+              </div>
+            </div>
+          </div>
+        `,
+        draw(t, $) {
+          // Aumento de lluvia y caudal hacia el final del paso
+          const k = Math.min(1, t / 20);
+          const rain = 18.5 + (68.5 - 18.5) * k;
+          const flow = 120 + (477 - 120) * k;
+          const ssi = 45 + (88 - 45) * k;
+          
+          $('#c2-rain').textContent = rain.toFixed(1) + ' mm';
+          $('#c2-rain-bar').style.width = (rain / 70 * 100) + '%';
+          if (rain > 50) {
+            $('#c2-rain').style.color = '#FF3B30';
+            $('#c2-rain-bar').style.background = '#FF3B30';
+          }
+          
+          $('#c2-flow').textContent = Math.round(flow) + ' m³/s';
+          $('#c2-flow-bar').style.width = (flow / 500 * 100) + '%';
+          if (flow > 400) {
+            $('#c2-flow').style.color = '#FF3B30';
+            $('#c2-flow-bar').style.background = '#FF3B30';
+          }
+          
+          $('#c2-ssi').textContent = Math.round(ssi) + '%';
+          $('#c2-ssi-bar').style.width = ssi + '%';
+          
+          return {
+            cursor: {
+              x: 350 + k * 450,
+              y: 280 + Math.sin(t * 2) * 20,
+              press: t > 18 && t < 18.2
+            }
+          };
+        }
+      },
+      {
+        id: 'machine_learning',
+        name: '3. Machine Learning Predictivo',
+        dur: 30,
+        html: `
+          <div class="k-stage">
+            <div class="k-header-row">
+              <div class="k-header-left">
+                <span class="k-tag k-tag-green">● MOTOR DE MACHINE LEARNING</span>
+                <span style="color:#8E9BAE; font-size:13px; font-family:var(--hd-mono);">Ensamble Random Forest & Gradient Boosting (Scikit-Learn)</span>
+              </div>
+              <span class="k-tag k-tag-red" id="c3-alert-badge">EVALUANDO MODELO...</span>
+            </div>
+            <div class="k-grid-2">
+              <div class="k-card">
+                <div class="k-card-title">
+                  <span>Importancia de Variables (Feature Importance)</span>
+                  <span class="k-tag k-tag-cyan">ENTRENAMIENTO FEN 1997 / 2017 / 2023</span>
+                </div>
+                <div class="feature-row">
+                  <span class="feature-name">Lluvia Acum. 72h (mm)</span>
+                  <div class="feature-bar-container"><div class="k-bar-fill" style="background:#00FF66; width:42%;"></div></div>
+                  <span class="feature-pct" style="color:#00FF66;">42%</span>
+                </div>
+                <div class="feature-row">
+                  <span class="feature-name">Caudal Río Moche (m³/s)</span>
+                  <div class="feature-bar-container"><div class="k-bar-fill" style="background:#00E5FF; width:28%;"></div></div>
+                  <span class="feature-pct" style="color:#00E5FF;">28%</span>
+                </div>
+                <div class="feature-row">
+                  <span class="feature-name">Saturación Suelo (SSI%)</span>
+                  <div class="feature-bar-container"><div class="k-bar-fill" style="background:#FFCC00; width:18%;"></div></div>
+                  <span class="feature-pct" style="color:#FFCC00;">18%</span>
+                </div>
+                <div class="feature-row">
+                  <span class="feature-name">Pendiente Quebradas (º)</span>
+                  <div class="feature-bar-container"><div class="k-bar-fill" style="background:#FF9500; width:8%;"></div></div>
+                  <span class="feature-pct" style="color:#FF9500;">8%</span>
+                </div>
+                <div class="feature-row">
+                  <span class="feature-name">Anomalía Térmica SST (ºC)</span>
+                  <div class="feature-bar-container"><div class="k-bar-fill" style="background:#FF3B30; width:4%;"></div></div>
+                  <span class="feature-pct" style="color:#FF3B30;">4%</span>
+                </div>
+                <div style="margin-top:auto; padding:12px; background:rgba(255,255,255,0.03); border-radius:8px; display:flex; justify-content:space-between; font-size:12px; font-family:var(--hd-mono);">
+                  <span>Exactitud: <b>96.4%</b></span>
+                  <span>F1-Score: <b>0.942</b></span>
+                  <span>AUC-ROC: <b>0.981</b></span>
+                </div>
+              </div>
+              <div class="k-card">
+                <div class="k-card-title">
+                  <span>Predicción de Desastre en Tiempo Real</span>
+                  <span class="k-tag k-tag-red">INFERENCIA INMEDIATA</span>
+                </div>
+                <div style="text-align:center; padding:10px 0;">
+                  <div style="font-size:13px; color:#8E9BAE; font-family:var(--hd-mono);">PROBABILIDAD DE HUAICO / COLAPSO</div>
+                  <div class="k-metric-value" style="color:#FF3B30; font-size:48px;" id="c3-prob">94.8%</div>
+                  <div class="k-bar-wrapper" style="height:12px;">
+                    <div id="c3-prob-bar" class="k-bar-fill" style="background:#FF3B30; width:94.8%;"></div>
+                  </div>
+                </div>
+                <div style="background:rgba(255,59,48,0.12); border:1px solid rgba(255,59,48,0.3); border-radius:8px; padding:14px; margin-top:auto;">
+                  <div style="color:#FF3B30; font-weight:700; font-size:14px; display:flex; align-items:center; gap:8px;">
+                    <span>⚠️ ALERTA TEMPRANA ML CONFIRMADA</span>
+                  </div>
+                  <p style="margin:6px 0 0; font-size:13px; color:#C3C6CC;">
+                    Punto de falla proyectado: <b>Puente Río Moche (Panamericana Norte)</b>.<br/>
+                    Tiempo estimado de impacto (ETA): <b>38 minutos antes de la colisión física</b>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `,
+        draw(t, $) {
+          const k = Math.min(1, t / 15);
+          const prob = 18 + (94.8 - 18) * k;
+          
+          $('#c3-prob').textContent = prob.toFixed(1) + '%';
+          $('#c3-prob-bar').style.width = prob + '%';
+          
+          if (prob > 75) {
+            $('#c3-alert-badge').textContent = '● ALERTA ROJA (UMBRAL CRÍTICO SUPERADO)';
+            $('#c3-alert-badge').className = 'k-tag k-tag-red';
+          } else {
+            $('#c3-alert-badge').textContent = 'CALIBRANDO PROBABILIDADES...';
+            $('#c3-alert-badge').className = 'k-tag k-tag-yellow';
+          }
+          
+          return {
+            cursor: {
+              x: 820 + Math.sin(t * 1.5) * 40,
+              y: 380 + Math.cos(t * 1.5) * 20,
+              press: t > 16 && t < 16.3
+            }
+          };
+        }
+      },
+      {
+        id: 'dijkstra',
+        name: '4. NLP y Desvío Dijkstra OSRM',
+        dur: 29,
+        html: `
+          <div class="k-stage">
+            <div class="k-header-row">
+              <div class="k-header-left">
+                <span class="k-tag k-tag-cyan">● FILTRADO NLP Y RECÁLCULO VIAL</span>
+                <span style="color:#8E9BAE; font-size:13px; font-family:var(--hd-mono);">Validación Ciudadana + Algoritmo Dijkstra sobre OpenStreetMap</span>
+              </div>
+              <span class="k-tag k-tag-green">DESVÍO VIAL ACTIVO</span>
+            </div>
+            <div class="k-grid-2">
+              <div class="k-card">
+                <div class="k-card-title">
+                  <span>Filtro NLP Anti-Desinformación (WhatsApp)</span>
+                  <span class="k-tag k-tag-green">CREDIBILIDAD: 95%</span>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:8px; font-size:12px;">
+                  <div style="padding:10px; background:rgba(0,255,102,0.08); border-left:3px solid #00FF66; border-radius:4px;">
+                    <div style="font-weight:600; color:#00FF66;">WhatsApp Vecinos Moche (Hace 2 min)</div>
+                    <div>«El caudal del río se llevó el pilar sur del puente. Tránsito cortado totalmente.»</div>
+                    <div style="color:#8E9BAE; margin-top:4px; font-family:var(--hd-mono);">NLP Confianza: 98.4% · Categoría: Colapso Estructural</div>
+                  </div>
+                  <div style="padding:10px; background:rgba(255,59,48,0.08); border-left:3px solid #FF3B30; border-radius:4px;">
+                    <div style="font-weight:600; color:#FF3B30;">Twitter / Redes (Descartado por NLP)</div>
+                    <div>«Dicen que se cayó la represa de Gallito Ciego...» (Fake News eliminada)</div>
+                    <div style="color:#8E9BAE; margin-top:4px; font-family:var(--hd-mono);">NLP Confianza: 12.1% · Filtro Anti-Pánico Activado</div>
+                  </div>
+                </div>
+                <div style="margin-top:auto; padding:12px; background:rgba(0,229,255,0.08); border-radius:8px; font-size:12px; color:#C3C6CC;">
+                  💡 El motor de NLP cruza coordenadas geoespaciales con reportes de campo para evitar bloqueos por rumores falsos.
+                </div>
+              </div>
+              <div class="k-card">
+                <div class="k-card-title">
+                  <span>Recálculo Dijkstra en Vivo (Cuenca Moche)</span>
+                  <span class="k-tag k-tag-green">RUTA SEGURA PE-10A</span>
+                </div>
+                <div class="map-canvas-box" id="map-box">
+                  <svg viewBox="0 0 500 320" style="width:100%; height:100%;">
+                    <!-- Océano y Costa -->
+                    <path d="M 0,0 L 70,0 L 90,320 L 0,320 Z" fill="#0A1424" />
+                    <text x="20" y="160" fill="#00E5FF" font-size="10" opacity="0.6" font-family="monospace">OCÉANO PACÍFICO</text>
+                    
+                    <!-- Río Moche -->
+                    <path d="M 450,40 Q 300,100 220,130 T 130,170 T 80,180" fill="none" stroke="#0077BE" stroke-width="6" opacity="0.7"/>
+                    <text x="280" y="90" fill="#00E5FF" font-size="11" font-weight="600">Río Moche (477 m³/s)</text>
+                    
+                    <!-- Panamericana Norte (Bloqueada en Puente Moche) -->
+                    <path d="M 120,40 L 130,170 L 140,290" fill="none" stroke="#FF3B30" stroke-width="4" stroke-dasharray="6,4"/>
+                    <circle cx="130" cy="170" r="10" fill="#FF3B30" opacity="0.3"/>
+                    <circle cx="130" cy="170" r="6" fill="#FF3B30"/>
+                    <text x="145" y="175" fill="#FF3B30" font-size="11" font-weight="700">[X] PUENTE MOCHE COLAPSADO</text>
+                    
+                    <!-- Ruta Alterna Segura PE-10A Laredo -->
+                    <path id="route-detour" d="M 120,40 L 260,80 L 340,110 L 260,240 L 140,290" fill="none" stroke="#00FF66" stroke-width="5" stroke-linecap="round"/>
+                    
+                    <!-- Ciudades clave -->
+                    <circle cx="120" cy="40" r="4" fill="#FFFFFF"/>
+                    <text x="75" y="35" fill="#FFFFFF" font-size="11" font-weight="700">TRUJILLO (Origen)</text>
+                    
+                    <circle cx="260" cy="80" r="4" fill="#00FF66"/>
+                    <text x="270" y="80" fill="#00FF66" font-size="10">Laredo</text>
+                    
+                    <circle cx="340" cy="110" r="4" fill="#00FF66"/>
+                    <text x="350" y="115" fill="#00FF66" font-size="10">Menocucho</text>
+                    
+                    <circle cx="140" cy="290" r="4" fill="#FFFFFF"/>
+                    <text x="150" y="295" fill="#FFFFFF" font-size="11" font-weight="700">VIRÚ (Destino)</text>
+                    
+                    <!-- Baliza de Convoy Humanitario -->
+                    <circle id="convoy-dot" cx="120" cy="40" r="6" fill="#00FF66">
+                      <animate attributeName="r" values="6;9;6" dur="1.2s" repeatCount="indefinite"/>
+                    </circle>
+                  </svg>
+                </div>
+                <div style="display:flex; justify-content:space-between; margin-top:10px; font-family:var(--hd-mono); font-size:11px; color:#8E9BAE;">
+                  <span>Distancia: <b>+32 km</b></span>
+                  <span>Tiempo Adicional: <b>+41 min</b></span>
+                  <span style="color:#00FF66;">Riesgo Huaico: <b>0.0%</b></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `,
+        draw(t, $) {
+          // Desplazamiento dinámico del convoy a lo largo de la ruta PE-10A
+          const path = [
+            [0, 120, 40],
+            [6, 260, 80],
+            [14, 340, 110],
+            [22, 260, 240],
+            [29, 140, 290]
+          ];
+          
+          let cx = 120, cy = 40;
+          for (let i = 0; i < path.length - 1; i++) {
+            const [t1, x1, y1] = path[i];
+            const [t2, x2, y2] = path[i+1];
+            if (t >= t1 && t <= t2) {
+              const alpha = (t - t1) / (t2 - t1);
+              cx = x1 + (x2 - x1) * alpha;
+              cy = y1 + (y2 - y1) * alpha;
+              break;
+            } else if (t > t2) {
+              cx = x2;
+              cy = y2;
+            }
+          }
+          
+          const dot = $('#convoy-dot');
+          if (dot) {
+            dot.setAttribute('cx', cx);
+            dot.setAttribute('cy', cy);
+          }
+          
+          return {
+            cursor: {
+              x: 750 + Math.sin(t) * 50,
+              y: 420 + Math.cos(t) * 30,
+              press: t > 12 && t < 12.3
+            }
+          };
+        }
+      },
+      {
+        id: 'humanitarian',
+        name: '5. Suministros EDAN & Ecosistema',
+        dur: 17,
+        html: `
+          <div class="k-stage">
+            <div class="k-header-row">
+              <div class="k-header-left">
+                <span class="k-tag k-tag-green">● LOGÍSTICA HUMANITARIA INMEDIATA</span>
+                <span style="color:#8E9BAE; font-size:13px; font-family:var(--hd-mono);">Ficha EDAN Automática · Estándares Humanitarios SPHERE</span>
+              </div>
+              <span class="k-tag k-tag-cyan">HACKATHON UPN IA+ 2026</span>
+            </div>
+            <div class="k-grid-3">
+              <div class="k-card">
+                <div class="k-card-title">
+                  <span>Población Damnificada</span>
+                  <span class="k-tag k-tag-red">EDAN CENSAL</span>
+                </div>
+                <div class="k-metric-value" style="color:#FF3B30;">4,250</div>
+                <div style="font-size:12px; color:#8E9BAE;">Familias afectadas en El Porvenir y Moche</div>
+                <div class="k-bar-wrapper">
+                  <div class="k-bar-fill" style="background:#FF3B30; width:100%;"></div>
+                </div>
+              </div>
+              <div class="k-card">
+                <div class="k-card-title">
+                  <span>Agua y Alimentos</span>
+                  <span class="k-tag k-tag-cyan">NORMA SPHERE</span>
+                </div>
+                <div class="k-metric-value" style="color:#00E5FF;">12.8 Ton</div>
+                <div style="font-size:12px; color:#8E9BAE;">Raciones de 72 horas calculadas al instante</div>
+                <div class="k-bar-wrapper">
+                  <div class="k-bar-fill" style="background:#00E5FF; width:85%;"></div>
+                </div>
+              </div>
+              <div class="k-card">
+                <div class="k-card-title">
+                  <span>Convoyes Despachados</span>
+                  <span class="k-tag k-tag-green">EN RUTA PE-10A</span>
+                </div>
+                <div class="k-metric-value" style="color:#00FF66;">6 Camiones</div>
+                <div style="font-size:12px; color:#8E9BAE;">Flota INDECI con telemetría satelital</div>
+                <div class="k-bar-wrapper">
+                  <div class="k-bar-fill" style="background:#00FF66; width:75%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="k-card" style="margin-top:20px; flex:1; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+              <div style="font-size:24px; font-weight:700; color:#00FF66; margin-bottom:8px;">KYBERNA IA: EL VIGILANTE QUE EL PERÚ NECESITA</div>
+              <p style="max-width:760px; font-size:14px; color:#C3C6CC; line-height:1.6; margin:0 auto 16px;">
+                Un ecosistema modular N-Capas escalable a las 53 cuencas hidrográficas de la costa peruana. Integrable con Agentes de Salud, Drones de inspección y flotas logísticas privadas B2B.
+              </p>
+              <div style="display:flex; gap:12px;">
+                <span class="k-tag k-tag-green">✓ B2G: Gobiernos Regionales & INDECI</span>
+                <span class="k-tag k-tag-cyan">✓ B2B: Agroexportación & Transporte</span>
+                <span class="k-tag k-tag-yellow">✓ Escalabilidad Kubernetes / Docker</span>
+              </div>
+            </div>
+          </div>
+        `,
+        draw(t, $) {
+          return {
+            cursor: {
+              x: 600 + Math.sin(t) * 30,
+              y: 500,
+              press: t > 8 && t < 8.3
+            }
+          };
+        }
+      }
+    ];
+
+    // Montar el reproductor interactivo
+    const demo = HTMLDemo.mount(document.getElementById('demo-mount'), {
+      steps: STEPS,
+      tabs: ['Kyberna IA v2.6', 'Cuenca Río Moche'],
+      label: 'Kyberna IA Demo Interactivo'
+    });
+
+    // Sincronizar el audio si el usuario lo reproduce
+    audio.addEventListener('timeupdate', () => {
+      if (!audio.paused) {
+        demo.seek(audio.currentTime);
+      }
+    });
+  </script>
+</body>
+</html>
+
