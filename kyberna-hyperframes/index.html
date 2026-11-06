@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>KYBERNA IA — Pipeline Logístico de 4 Fases (Fenómeno del Niño · Piura)</title>
+    <link rel="stylesheet" href="assets/styles/kyberna.css" />
+    <script src="assets/vendor/gsap.min.js"></script>
+  </head>
+  <body style="background:#000000;">
+    <div
+      id="root"
+      data-composition-id="kyberna-ia-piura"
+      data-start="0"
+      data-duration="30"
+      data-width="1920"
+      data-height="1080"
+      style="position:relative; width:1920px; height:1080px; background:#000000; overflow:hidden;"
+    >
+      <div
+        id="mount-scene-1"
+        class="clip"
+        data-composition-id="scene-1-problem"
+        data-composition-src="compositions/scene-1-problem.html"
+        data-start="0"
+        data-duration="6.8"
+        data-track-index="1"
+        style="z-index: 10;"
+      ></div>
+
+      <div
+        id="mount-scene-2"
+        class="clip"
+        data-composition-id="scene-2-ingesta-nlp"
+        data-composition-src="compositions/scene-2-ingesta-nlp.html"
+        data-start="6.2"
+        data-duration="7.6"
+        data-track-index="2"
+        style="z-index: 20;"
+      ></div>
+
+      <div
+        id="mount-scene-3"
+        class="clip"
+        data-composition-id="scene-3-validation"
+        data-composition-src="compositions/scene-3-validation.html"
+        data-start="13.8"
+        data-duration="6.7"
+        data-track-index="3"
+        style="z-index: 30;"
+      ></div>
+
+      <div
+        id="mount-scene-4"
+        class="clip"
+        data-composition-id="scene-4-routing"
+        data-composition-src="compositions/scene-4-routing.html"
+        data-start="20.5"
+        data-duration="9.5"
+        data-track-index="4"
+        style="z-index: 40;"
+      ></div>
+
+      <audio id="vo_p1_problema" class="clip" src="assets/audio/vo_p1_problema.wav" data-start="0.15" data-duration="5.695" data-volume="1.2" data-fade-in="0.02" data-fade-out="0.05" data-track-index="10"></audio>
+      <audio id="vo_p2_ingesta_nlp" class="clip" src="assets/audio/vo_p2_ingesta_nlp.wav" data-start="6.65" data-duration="6.761" data-volume="1.2" data-fade-in="0.02" data-fade-out="0.05" data-track-index="10"></audio>
+      <audio id="vo_p3_validacion_95" class="clip" src="assets/audio/vo_p3_validacion_95.wav" data-start="13.95" data-duration="6.078" data-volume="1.2" data-fade-in="0.02" data-fade-out="0.05" data-track-index="10"></audio>
+      <audio id="vo_p4_enrutamiento_kits" class="clip" src="assets/audio/vo_p4_enrutamiento_kits.wav" data-start="20.55" data-duration="4.91" data-volume="1.2" data-fade-in="0.02" data-fade-out="0.05" data-track-index="10"></audio>
+      <audio id="vo_p5_kyberna_cierre" class="clip" src="assets/audio/vo_p5_kyberna_cierre.wav" data-start="25.95" data-duration="2.872" data-volume="1.2" data-fade-in="0.02" data-fade-out="0.05" data-track-index="10"></audio>
+      <audio id="sfx_cyber_ambience" class="clip" src="assets/audio/sfx_p00_cyber_ambience.wav" data-start="0.0" data-duration="30.0" data-volume="0.13" data-fade-in="0.7" data-fade-out="1.5" data-track-index="12"></audio>
+      <audio id="sfx_map_boot" class="clip" src="assets/audio/sfx_p01_map_boot.wav" data-start="0.0" data-duration="1.8" data-volume="0.26" data-fade-in="0.02" data-fade-out="0.05" data-track-index="11"></audio>
+      <audio id="sfx_nino_huaico" class="clip" src="assets/audio/sfx_p02_nino_huaico.wav" data-start="2.0" data-duration="1.9" data-volume="0.34" data-fade-in="0.02" data-fade-out="0.05" data-track-index="11"></audio>
+      <audio id="sfx_delay_72h" class="clip" src="assets/audio/sfx_p03_delay_72h.wav" data-start="4.0" data-duration="2.0" data-volume="0.24" data-fade-in="0.02" data-fade-out="0.05" data-track-index="11"></audio>
+      <audio id="sfx_laser_wipe" class="clip" src="assets/audio/sfx_p04_laser_wipe.wav" data-start="6.2" data-duration="0.85" data-volume="0.4" data-fade-in="0.02" data-fade-out="0.05" data-track-index="11"></audio>
+      <audio id="sfx_ingesta_bars" class="clip" src="assets/audio/sfx_p05_ingesta_bars.wav" data-start="7.15" data-duration="2.4" data-volume="0.24" data-fade-in="0.02" data-fade-out="0.05" data-track-index="11"></audio>
+      <audio id="sfx_nlp_entities" class="clip" src="assets/audio/sfx_p06_nlp_entities.wav" data-start="9.7" data-duration="2.5" data-volume="0.26" data-fade-in="0.02" data-fade-out="0.05" data-track-index="11"></audio>
+      <audio id="sfx_senamhi_polygon_lock" class="clip" src="assets/audio/sfx_p07_senamhi_polygon_lock.wav" data-start="13.8" data-duration="2.15" data-volume="0.26" data-fade-in="0.02" data-fade-out="0.05" data-track-index="11"></audio>
+      <audio id="sfx_jump_95_validated" class="clip" src="assets/audio/sfx_p08_jump_95_validated.wav" data-start="16.05" data-duration="2.5" data-volume="0.33" data-fade-in="0.02" data-fade-out="0.05" data-track-index="11"></audio>
+      <audio id="sfx_graph_cut" class="clip" src="assets/audio/sfx_p09_graph_cut.wav" data-start="20.3" data-duration="0.7" data-volume="0.36" data-fade-in="0.02" data-fade-out="0.05" data-track-index="11"></audio>
+      <audio id="sfx_dijkstra_probes" class="clip" src="assets/audio/sfx_p10_dijkstra_probes.wav" data-start="21.2" data-duration="2.15" data-volume="0.27" data-fade-in="0.02" data-fade-out="0.05" data-track-index="11"></audio>
+      <audio id="sfx_optimal_route" class="clip" src="assets/audio/sfx_p11_optimal_route.wav" data-start="23.45" data-duration="1.9" data-volume="0.32" data-fade-in="0.02" data-fade-out="0.05" data-track-index="11"></audio>
+      <audio id="sfx_kyberna_outro" class="clip" src="assets/audio/sfx_p12_kyberna_outro.wav" data-start="25.7" data-duration="4.3" data-volume="0.3" data-fade-in="0.05" data-fade-out="0.85" data-track-index="11"></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const rootTl = gsap.timeline({ paused: true });
+      rootTl.set("#root", { opacity: 1 }, 30.0);
+      window.__timelines["kyberna-ia-piura"] = rootTl;
+      rootTl.seek(0);
+    </script>
+  </body>
+</html>

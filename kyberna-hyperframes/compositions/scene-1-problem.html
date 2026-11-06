@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <link rel="stylesheet" href="../assets/styles/kyberna.css" />
+    <style>#root { position: relative; width: 1920px; height: 1080px; overflow: hidden; }</style>
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="scene-1-problem"
+      data-start="0"
+      data-duration="6.8"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div class="stage-backdrop"></div>
+      <div class="tech-grid-bg"></div>
+      <div class="hud-corner hud-tl"></div>
+      <div class="hud-corner hud-tr"></div>
+      <div class="hud-corner hud-bl"></div>
+      <div class="hud-corner hud-br"></div>
+      <svg width="0" height="0" style="position:absolute;">
+      <defs>
+        <filter id="neonCyanGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="5" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <filter id="neonRedGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <filter id="neonGreenGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="8" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+    </svg>
+
+      <div id="s1-layer" class="clip" data-start="0" data-duration="6.8" data-track-index="0">
+        <div class="hud-header">
+          <div class="hud-dot"></div>
+          <div class="hud-kicker" data-layout-ignore>CONTEXTO // FENÓMENO DEL NIÑO EN PIURA, PERÚ · BLOQUEO HUMANITARIO</div>
+        </div>
+
+        <div id="s1-delay-card">
+          <div class="delay-row">
+            <div class="red-led"></div>
+            <div id="s1-delay-text">Retraso logístico: <span id="s1-delay-num">0</span> horas</div>
+          </div>
+          <div class="delay-sub" data-layout-ignore>VERIFICACIÓN PRESENCIAL TRADICIONAL DEMORADA</div>
+        </div>
+
+        <svg id="s1-piura-svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+          <text x="375" y="645" transform="rotate(-78 375 645)" class="ocean-label" data-layout-ignore>OCÉANO PACÍFICO</text>
+          <path id="s1-prov-0" class="piura-province " d="M 1224.4 410.3 L 1222.9 426.6 L 1202.6 452.5 L 1191.9 477.1 L 1188.3 498.3 L 1166.1 495.0 L 1136.0 506.0 L 1123.5 501.2 L 1085.0 465.2 L 1059.2 458.6 L 1042.9 475.2 L 1025.4 481.3 L 1010.4 474.0 L 997.7 477.6 L 982.4 470.0 L 975.5 443.5 L 970.3 427.2 L 977.6 411.8 L 984.2 374.3 L 1002.2 369.7 L 998.8 348.0 L 968.1 353.8 L 957.7 329.7 L 933.9 326.6 L 940.9 316.7 L 929.6 272.8 L 910.0 269.8 L 943.2 239.4 L 948.8 224.4 L 974.8 219.9 L 1014.1 251.1 L 1038.9 253.1 L 1056.1 262.7 L 1067.1 281.8 L 1083.1 290.7 L 1112.8 283.2 L 1131.4 270.1 L 1141.0 271.9 L 1163.6 298.2 L 1186.4 300.6 L 1192.9 318.7 L 1189.8 337.3 L 1224.4 410.3 Z" fill="rgba(6, 26, 44, 0.65)" stroke="#15557a" stroke-width="1.8" />
+<text x="1058.4" y="367.1" class="prov-watermark" data-layout-ignore>AYABACA</text>
+<path id="s1-prov-1" class="piura-province s1-epicenter-prov" d="M 1136.0 506.0 L 1166.1 495.0 L 1188.3 498.3 L 1191.9 477.1 L 1202.6 452.5 L 1222.9 426.6 L 1224.4 410.3 L 1238.0 426.8 L 1248.2 428.8 L 1268.4 457.4 L 1286.8 456.2 L 1274.6 468.9 L 1257.4 507.1 L 1247.7 509.4 L 1240.4 526.4 L 1228.1 535.2 L 1238.5 549.9 L 1234.9 569.5 L 1245.7 579.1 L 1253.9 605.7 L 1256.3 628.9 L 1266.3 648.3 L 1245.4 655.9 L 1221.2 656.6 L 1229.1 680.8 L 1220.3 731.0 L 1224.1 745.6 L 1243.6 781.5 L 1232.0 796.8 L 1214.1 808.4 L 1186.0 789.1 L 1150.6 797.6 L 1141.6 779.4 L 1139.8 758.9 L 1121.9 765.0 L 1102.9 761.9 L 1109.9 727.5 L 1085.5 695.0 L 1067.2 689.2 L 1080.8 665.4 L 1089.0 665.3 L 1102.8 646.8 L 1122.3 654.5 L 1135.9 638.4 L 1098.4 624.8 L 1092.0 617.2 L 1101.8 601.9 L 1128.9 597.7 L 1131.5 585.2 L 1118.0 559.2 L 1108.8 532.2 L 1110.7 512.8 L 1136.0 506.0 Z" fill="rgba(6, 26, 44, 0.65)" stroke="#15557a" stroke-width="1.8" />
+<text x="1182.2" y="609.3" class="prov-watermark" data-layout-ignore>HUANCABAMBA</text>
+<path id="s1-prov-2" class="piura-province s1-epicenter-prov" d="M 1067.2 689.2 L 1058.5 665.8 L 1062.2 654.8 L 1045.0 640.6 L 1030.1 648.9 L 1022.2 672.1 L 1011.5 673.5 L 981.9 664.8 L 920.5 584.1 L 898.5 570.2 L 883.8 549.9 L 894.1 511.1 L 910.1 493.5 L 933.9 486.1 L 921.7 465.4 L 929.4 450.3 L 949.6 458.5 L 975.5 443.5 L 982.4 470.0 L 997.7 477.6 L 1010.4 474.0 L 1025.4 481.3 L 1042.9 475.2 L 1059.2 458.6 L 1085.0 465.2 L 1123.5 501.2 L 1136.0 506.0 L 1110.7 512.8 L 1108.8 532.2 L 1118.0 559.2 L 1131.5 585.2 L 1128.9 597.7 L 1101.8 601.9 L 1092.0 617.2 L 1098.4 624.8 L 1135.9 638.4 L 1122.3 654.5 L 1102.8 646.8 L 1089.0 665.3 L 1080.8 665.4 L 1067.2 689.2 Z" fill="rgba(6, 26, 44, 0.65)" stroke="#15557a" stroke-width="1.8" />
+<text x="1034.5" y="563.3" class="prov-watermark" data-layout-ignore>MORROPÓN</text>
+<path id="s1-prov-3" class="piura-province " d="M 675.7 577.4 L 664.4 604.5 L 635.0 578.2 L 624.5 578.7 L 614.0 560.8 L 594.4 542.7 L 615.8 493.0 L 630.6 497.1 L 641.2 482.2 L 632.1 457.0 L 588.8 404.1 L 673.3 388.4 L 686.0 400.0 L 678.4 420.5 L 688.6 431.1 L 713.7 436.7 L 715.2 501.0 L 711.2 567.0 L 683.4 551.6 L 653.4 553.5 L 675.7 577.4 Z" fill="rgba(6, 26, 44, 0.65)" stroke="#15557a" stroke-width="1.8" />
+<text x="656.0" y="501.3" class="prov-watermark" data-layout-ignore>PAITA</text>
+<path id="s1-prov-4" class="piura-province " d="M 975.5 443.5 L 949.6 458.5 L 929.4 450.3 L 921.7 465.4 L 933.9 486.1 L 910.1 493.5 L 894.1 511.1 L 883.8 549.9 L 898.5 570.2 L 920.5 584.1 L 981.9 664.8 L 1011.5 673.5 L 1022.2 672.1 L 1013.0 731.9 L 992.7 752.7 L 973.1 744.5 L 938.7 721.2 L 909.6 706.0 L 898.5 706.5 L 824.6 679.2 L 818.4 640.9 L 789.0 638.7 L 789.5 626.2 L 765.0 618.9 L 768.6 603.2 L 758.5 591.8 L 730.1 587.0 L 714.8 573.0 L 722.4 547.2 L 730.1 545.8 L 751.4 514.0 L 766.8 474.6 L 767.7 454.4 L 799.7 443.5 L 822.7 412.3 L 834.1 406.5 L 865.0 408.5 L 885.0 392.6 L 891.5 366.9 L 881.7 355.6 L 886.7 341.1 L 924.4 323.0 L 933.9 326.6 L 957.7 329.7 L 968.1 353.8 L 998.8 348.0 L 1002.2 369.7 L 984.2 374.3 L 977.6 411.8 L 970.3 427.2 L 975.5 443.5 Z" fill="rgba(6, 26, 44, 0.65)" stroke="#15557a" stroke-width="1.8" />
+<text x="836.7" y="601.6" class="prov-watermark" data-layout-ignore>PIURA</text>
+<path id="s1-prov-5" class="piura-province " d="M 711.2 567.0 L 714.8 573.0 L 730.1 587.0 L 758.5 591.8 L 768.6 603.2 L 765.0 618.9 L 675.7 577.4 L 653.4 553.5 L 683.4 551.6 L 711.2 567.0 Z" fill="rgba(6, 26, 44, 0.65)" stroke="#15557a" stroke-width="1.8" />
+<path id="s1-prov-6" class="piura-province " d="M 765.0 618.9 L 789.5 626.2 L 789.0 638.7 L 818.4 640.9 L 824.6 679.2 L 898.5 706.5 L 909.6 706.0 L 938.7 721.2 L 973.1 744.5 L 992.7 752.7 L 965.5 779.8 L 941.8 781.3 L 896.9 800.4 L 879.9 821.3 L 792.4 949.2 L 732.8 920.1 L 692.5 885.6 L 630.3 847.6 L 610.1 812.2 L 610.1 780.0 L 628.2 762.1 L 638.4 743.7 L 654.7 759.5 L 682.1 764.8 L 700.1 752.2 L 710.7 731.1 L 713.7 691.1 L 698.0 647.6 L 686.6 628.7 L 664.4 604.5 L 675.7 577.4 L 765.0 618.9 Z" fill="rgba(6, 26, 44, 0.65)" stroke="#15557a" stroke-width="1.8" />
+<text x="771.1" y="737.9" class="prov-watermark" data-layout-ignore>SECHURA</text>
+<path id="s1-prov-7" class="piura-province s1-epicenter-prov" d="M 714.8 573.0 L 711.2 567.0 L 715.2 501.0 L 713.7 436.7 L 688.6 431.1 L 678.4 420.5 L 686.0 400.0 L 673.3 388.4 L 715.2 380.2 L 706.7 359.2 L 686.9 339.8 L 700.3 326.6 L 690.4 300.3 L 704.0 290.2 L 713.8 252.2 L 684.0 220.0 L 694.0 196.7 L 684.4 180.4 L 703.1 185.5 L 730.9 179.7 L 766.8 183.8 L 778.6 193.3 L 793.7 199.2 L 815.5 179.2 L 828.2 155.6 L 841.1 147.1 L 854.4 161.9 L 859.6 186.6 L 881.6 187.2 L 896.5 196.2 L 883.1 216.8 L 862.3 235.9 L 852.9 253.1 L 858.1 277.9 L 875.3 288.3 L 910.0 269.8 L 929.6 272.8 L 940.9 316.7 L 933.9 326.6 L 924.4 323.0 L 886.7 341.1 L 881.7 355.6 L 891.5 366.9 L 885.0 392.6 L 865.0 408.5 L 834.1 406.5 L 822.7 412.3 L 799.7 443.5 L 767.7 454.4 L 766.8 474.6 L 751.4 514.0 L 730.1 545.8 L 722.4 547.2 L 714.8 573.0 Z" fill="rgba(6, 26, 44, 0.65)" stroke="#15557a" stroke-width="1.8" />
+<text x="790.3" y="323.8" class="prov-watermark" data-layout-ignore>SULLANA</text>
+<path id="s1-prov-8" class="piura-province " d="M 673.3 388.4 L 588.8 404.1 L 547.7 356.9 L 554.2 349.9 L 563.7 302.0 L 556.3 287.3 L 569.0 270.1 L 575.2 242.3 L 571.3 226.9 L 579.5 205.8 L 603.4 191.7 L 627.1 163.2 L 647.8 148.7 L 672.2 162.5 L 684.4 180.4 L 694.0 196.7 L 684.0 220.0 L 713.8 252.2 L 704.0 290.2 L 690.4 300.3 L 700.3 326.6 L 686.9 339.8 L 706.7 359.2 L 715.2 380.2 L 673.3 388.4 Z" fill="rgba(6, 26, 44, 0.65)" stroke="#15557a" stroke-width="1.8" />
+<text x="637.9" y="272.7" class="prov-watermark" data-layout-ignore>TALARA</text>
+<path d="M 1147.4 600.2 L 1072.3 588.2 L 1021.4 533.9 L 954.5 500.8 L 781.9 532.1 L 775.6 580.5 L 724.3 663.5" fill="none" stroke="rgba(0, 240, 255, 0.14)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+<line class="s1-road-periph" x1="567.35" y1="320.25" x2="772.06" y2="434.73" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="567.35" y1="320.25" x2="772.06" y2="434.73" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="567.35" y1="320.25" x2="622.32" y2="499.66" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="567.35" y1="320.25" x2="622.32" y2="499.66" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="622.32" y1="499.66" x2="781.86" y2="532.14" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="622.32" y1="499.66" x2="781.86" y2="532.14" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="622.32" y1="499.66" x2="772.06" y2="434.73" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="622.32" y1="499.66" x2="772.06" y2="434.73" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="772.06" y1="434.73" x2="781.86" y2="532.14" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="772.06" y1="434.73" x2="781.86" y2="532.14" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="781.86" y1="532.14" x2="775.65" y2="580.54" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="781.86" y1="532.14" x2="775.65" y2="580.54" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="775.65" y1="580.54" x2="724.28" y2="663.55" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="775.65" y1="580.54" x2="724.28" y2="663.55" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="781.86" y1="532.14" x2="724.28" y2="663.55" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="781.86" y1="532.14" x2="724.28" y2="663.55" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="781.86" y1="532.14" x2="887.32" y2="536.74" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="781.86" y1="532.14" x2="887.32" y2="536.74" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="775.65" y1="580.54" x2="887.32" y2="536.74" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="775.65" y1="580.54" x2="887.32" y2="536.74" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="772.06" y1="434.73" x2="891.02" y2="442.79" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="772.06" y1="434.73" x2="891.02" y2="442.79" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="781.86" y1="532.14" x2="891.02" y2="442.79" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="781.86" y1="532.14" x2="891.02" y2="442.79" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="891.02" y1="442.79" x2="925.11" y2="346.91" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="891.02" y1="442.79" x2="925.11" y2="346.91" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="925.11" y1="346.91" x2="1030.39" y2="338.05" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="925.11" y1="346.91" x2="1030.39" y2="338.05" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="1030.39" y1="338.05" x2="1110.69" y2="342.18" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="1030.39" y1="338.05" x2="1110.69" y2="342.18" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="1110.69" y1="342.18" x2="1202.92" y2="552.01" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="1110.69" y1="342.18" x2="1202.92" y2="552.01" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-periph" x1="1202.92" y1="552.01" x2="1147.36" y2="600.16" stroke="#1e4968" stroke-width="3.4" stroke-linecap="round" /><line class="s1-road-periph" x1="1202.92" y1="552.01" x2="1147.36" y2="600.16" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.3" />
+<line class="s1-road-central-intact" x1="891.02" y1="442.79" x2="954.49" y2="500.82" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="2.6" />
+<g class="s1-fractured-group" style="opacity:0;"><line x1="891.0" y1="442.8" x2="912.6" y2="462.5" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><line x1="932.9" y1="481.1" x2="954.5" y2="500.8" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><path d="M 915.8 464.8 L 929.8 478.8 M 915.8 478.8 L 929.8 464.8" stroke="#ff4d6d" stroke-width="2.4" stroke-linecap="round" /></g>
+<line class="s1-road-central-intact" x1="887.32" y1="536.74" x2="954.49" y2="500.82" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="2.6" />
+<g class="s1-fractured-group" style="opacity:0;"><line x1="887.3" y1="536.7" x2="910.2" y2="524.5" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><line x1="931.7" y1="513.0" x2="954.5" y2="500.8" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><path d="M 913.9 511.8 L 927.9 525.8 M 913.9 525.8 L 927.9 511.8" stroke="#ff4d6d" stroke-width="2.4" stroke-linecap="round" /></g>
+<line class="s1-road-central-intact" x1="887.32" y1="536.74" x2="1072.27" y2="588.25" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="2.6" />
+<g class="s1-fractured-group" style="opacity:0;"><line x1="887.3" y1="536.7" x2="950.2" y2="554.3" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><line x1="1009.4" y1="570.7" x2="1072.3" y2="588.2" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><path d="M 972.8 555.5 L 986.8 569.5 M 972.8 569.5 L 986.8 555.5" stroke="#ff4d6d" stroke-width="2.4" stroke-linecap="round" /></g>
+<line class="s1-road-central-intact" x1="954.49" y1="500.82" x2="1021.39" y2="533.86" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="2.6" />
+<g class="s1-fractured-group" style="opacity:0;"><line x1="954.5" y1="500.8" x2="977.2" y2="512.1" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><line x1="998.6" y1="522.6" x2="1021.4" y2="533.9" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><path d="M 980.9 510.3 L 994.9 524.3 M 980.9 524.3 L 994.9 510.3" stroke="#ff4d6d" stroke-width="2.4" stroke-linecap="round" /></g>
+<line class="s1-road-central-intact" x1="1030.39" y1="338.05" x2="1021.39" y2="533.86" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="2.6" />
+<g class="s1-fractured-group" style="opacity:0;"><line x1="1030.4" y1="338.1" x2="1027.3" y2="404.6" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><line x1="1024.5" y1="467.3" x2="1021.4" y2="533.9" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><path d="M 1018.9 429.0 L 1032.9 443.0 M 1018.9 443.0 L 1032.9 429.0" stroke="#ff4d6d" stroke-width="2.4" stroke-linecap="round" /></g>
+<line class="s1-road-central-intact" x1="1021.39" y1="533.86" x2="1072.27" y2="588.25" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="2.6" />
+<g class="s1-fractured-group" style="opacity:0;"><line x1="1021.4" y1="533.9" x2="1038.7" y2="552.4" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><line x1="1055.0" y1="569.8" x2="1072.3" y2="588.2" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><path d="M 1039.8 554.1 L 1053.8 568.1 M 1039.8 568.1 L 1053.8 554.1" stroke="#ff4d6d" stroke-width="2.4" stroke-linecap="round" /></g>
+<line class="s1-road-central-intact" x1="1072.27" y1="588.25" x2="1147.36" y2="600.16" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="2.6" />
+<g class="s1-fractured-group" style="opacity:0;"><line x1="1072.3" y1="588.2" x2="1097.8" y2="592.3" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><line x1="1121.8" y1="596.1" x2="1147.4" y2="600.2" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><path d="M 1102.8 587.2 L 1116.8 601.2 M 1102.8 601.2 L 1116.8 587.2" stroke="#ff4d6d" stroke-width="2.4" stroke-linecap="round" /></g>
+<line class="s1-road-central-intact" x1="1021.39" y1="533.86" x2="1147.36" y2="600.16" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="2.6" />
+<g class="s1-fractured-group" style="opacity:0;"><line x1="1021.4" y1="533.9" x2="1064.2" y2="556.4" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><line x1="1104.5" y1="577.6" x2="1147.4" y2="600.2" stroke="#ff003c" stroke-width="4.2" stroke-linecap="round" filter="url(#neonRedGlow)" /><path d="M 1077.4 560.0 L 1091.4 574.0 M 1077.4 574.0 L 1091.4 560.0" stroke="#ff4d6d" stroke-width="2.4" stroke-linecap="round" /></g>
+<path id="s1-direct-corridor" d="M 781.9 532.1 L 887.3 536.7 L 954.5 500.8 L 1021.4 533.9 L 1072.3 588.2 L 1147.4 600.2" fill="none" stroke="#00f0ff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonCyanGlow)" stroke-dasharray="418.85" stroke-dashoffset="418.85" />
+<g id="s1-hazard-zone" style="opacity:0;"><circle cx="1021.4" cy="533.9" r="96" fill="rgba(255, 0, 60, 0.13)" stroke="#ff003c" stroke-width="2.2" stroke-dasharray="10 7" /><rect x="881.4" y="617.9" width="232" height="34" rx="7" fill="rgba(26, 3, 10, 0.96)" stroke="#ff003c" stroke-width="1.8" /><text x="997.4" y="639.9" text-anchor="middle" class="hazard-pill-text" data-layout-ignore>HUAICO · FENÓMENO EL NIÑO</text></g>
+<circle id="s1-shockwave-1" cx="1021.4" cy="533.9" r="18" fill="none" stroke="#ff003c" stroke-width="7" style="opacity:0;" /><circle id="s1-shockwave-2" cx="1021.4" cy="533.9" r="12" fill="none" stroke="#ff6b8b" stroke-width="4" style="opacity:0;" />
+<g class="s1-endpoint"><circle cx="781.86" cy="532.14" r="24" fill="rgba(0,240,255,0.16)" stroke="#00f0ff" stroke-width="2.2" /><circle cx="781.86" cy="532.14" r="8.5" fill="#ffffff" /><line x1="757.86" y1="532.14" x2="707.86" y2="532.14" stroke="#00f0ff" stroke-width="2" /><rect x="431.86" y="490.14" width="276" height="84" rx="10" fill="rgba(5, 12, 22, 0.94)" stroke="#00f0ff" stroke-width="2" /><text x="569.86" y="520.14" text-anchor="middle" class="badge-kicker cyan-text" data-layout-ignore>ALMACÉN INDECI · PIURA</text><text x="569.86" y="556.14" text-anchor="middle" class="badge-title">Almacén Central</text></g>
+<g class="s1-endpoint"><circle cx="1147.36" cy="600.16" r="24" fill="rgba(255,145,0,0.18)" stroke="#ff9100" stroke-width="2.2" /><circle cx="1147.36" cy="600.16" r="8.5" fill="#ffffff" /><line x1="1171.36" y1="600.16" x2="1221.36" y2="600.16" stroke="#ff9100" stroke-width="2" /><rect x="1221.36" y="558.16" width="276" height="84" rx="10" fill="rgba(5, 12, 22, 0.94)" stroke="#ff9100" stroke-width="2" /><text x="1359.36" y="588.16" text-anchor="middle" class="badge-kicker amber-text" data-layout-ignore>ALTO PIURA · CANCHAQUE</text><text x="1359.36" y="624.16" text-anchor="middle" class="badge-title">Zona Cero</text></g>
+<g class="s1-periph-node"><circle cx="622.32" cy="499.66" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="622.32" cy="499.66" r="4.5" fill="#38bdf8" /><text x="622.32" y="484.66" text-anchor="middle" class="city-label" data-layout-ignore>Paita</text></g>
+<g class="s1-periph-node"><circle cx="567.35" cy="320.25" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="567.35" cy="320.25" r="4.5" fill="#38bdf8" /><text x="567.35" y="305.25" text-anchor="middle" class="city-label" data-layout-ignore>Talara</text></g>
+<g class="s1-periph-node"><circle cx="772.06" cy="434.73" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="772.06" cy="434.73" r="4.5" fill="#38bdf8" /><text x="772.06" y="419.73" text-anchor="middle" class="city-label" data-layout-ignore>Sullana</text></g>
+<g class="s1-periph-node"><circle cx="724.28" cy="663.55" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="724.28" cy="663.55" r="4.5" fill="#38bdf8" /><text x="724.28" y="648.55" text-anchor="middle" class="city-label" data-layout-ignore>Sechura</text></g>
+<g class="s1-periph-node"><circle cx="775.65" cy="580.54" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="775.65" cy="580.54" r="4.5" fill="#38bdf8" /><text x="775.65" y="565.54" text-anchor="middle" class="city-label" data-layout-ignore>Catacaos</text></g>
+<g class="s1-periph-node"><circle cx="887.32" cy="536.74" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="887.32" cy="536.74" r="4.5" fill="#38bdf8" /><text x="887.32" y="521.74" text-anchor="middle" class="city-label" data-layout-ignore>Km 50</text></g>
+<g class="s1-periph-node"><circle cx="891.02" cy="442.79" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="891.02" cy="442.79" r="4.5" fill="#38bdf8" /><text x="891.02" y="427.79" text-anchor="middle" class="city-label" data-layout-ignore>Tambogrande</text></g>
+<g class="s1-periph-node"><circle cx="925.11" cy="346.91" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="925.11" cy="346.91" r="4.5" fill="#38bdf8" /><text x="925.11" y="331.91" text-anchor="middle" class="city-label" data-layout-ignore>Las Lomas</text></g>
+<g class="s1-periph-node"><circle cx="1030.39" cy="338.05" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="1030.39" cy="338.05" r="4.5" fill="#38bdf8" /><text x="1030.39" y="323.05" text-anchor="middle" class="city-label" data-layout-ignore>Paimas</text></g>
+<g class="s1-periph-node"><circle cx="1110.69" cy="342.18" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="1110.69" cy="342.18" r="4.5" fill="#38bdf8" /><text x="1110.69" y="327.18" text-anchor="middle" class="city-label" data-layout-ignore>Ayabaca</text></g>
+<g class="s1-periph-node"><circle cx="1202.92" cy="552.01" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="1202.92" cy="552.01" r="4.5" fill="#38bdf8" /><text x="1202.92" y="537.01" text-anchor="middle" class="city-label" data-layout-ignore>Huancabamba</text></g>
+<g class="s1-central-node"><circle cx="954.49" cy="500.82" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="954.49" cy="500.82" r="4.5" fill="#38bdf8" /><text x="954.49" y="485.82" text-anchor="middle" class="city-label" data-layout-ignore>Chulucanas</text></g>
+<g class="s1-central-node"><circle cx="1021.39" cy="533.86" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="1021.39" cy="533.86" r="4.5" fill="#38bdf8" /><text x="1021.39" y="518.86" text-anchor="middle" class="city-label" data-layout-ignore>Morropón</text></g>
+<g class="s1-central-node"><circle cx="1072.27" cy="588.25" r="10" fill="rgba(7,14,24,0.9)" stroke="#38bdf8" stroke-width="1.8" /><circle cx="1072.27" cy="588.25" r="4.5" fill="#38bdf8" /><text x="1072.27" y="573.25" text-anchor="middle" class="city-label" data-layout-ignore>Salitral</text></g>
+        </svg>
+
+        <div class="region-pill" data-layout-ignore>REGIÓN PIURA · 8 PROVINCIAS · EMERGENCIA VIAL POR LLUVIAS EXTREMAS</div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#s1-piura-svg .piura-province", { opacity: 0 }, { opacity: 1, duration: 0.8, stagger: 0.04, ease: "power2.out" }, 0.0);
+      tl.fromTo(".s1-road-periph, .s1-road-central-intact, .s1-periph-node, .s1-central-node, .s1-endpoint", { opacity: 0 }, { opacity: 1, duration: 0.85, ease: "power2.out" }, 0.3);
+      tl.to("#s1-direct-corridor", { strokeDashoffset: 0, duration: 1.2, ease: "power2.inOut" }, 0.45);
+
+      tl.fromTo("#s1-shockwave-1", { attr: { r: 16 }, opacity: 1 }, { attr: { r: 260 }, opacity: 0, duration: 1.4, ease: "power2.out" }, 2.0);
+      tl.fromTo("#s1-shockwave-2", { attr: { r: 12 }, opacity: 0.95 }, { attr: { r: 185 }, opacity: 0, duration: 1.2, ease: "power2.out" }, 2.2);
+      tl.to("#s1-direct-corridor, .s1-road-central-intact", { opacity: 0, duration: 0.4, ease: "power2.in" }, 2.1);
+      tl.to(".s1-epicenter-prov", { fill: "rgba(255, 0, 60, 0.16)", stroke: "#ff2a55", duration: 0.55 }, 2.15);
+      tl.to(".s1-fractured-group, #s1-hazard-zone", { opacity: 1, duration: 0.55, ease: "back.out(1.4)" }, 2.25);
+
+      tl.fromTo("#s1-delay-card", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 3.85);
+      tl.fromTo("#s1-delay-num", { textContent: 0 }, { textContent: 72, duration: 1.85, ease: "power3.out", snap: { textContent: 1 } }, 3.95);
+      tl.set("#s1-layer", { opacity: 1 }, 6.8);
+
+      window.__timelines["scene-1-problem"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

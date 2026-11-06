@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <link rel="stylesheet" href="../assets/styles/kyberna.css" />
+    <style>#root { position: relative; width: 1920px; height: 1080px; overflow: hidden; }</style>
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="scene-3-validation"
+      data-start="0"
+      data-duration="6.7"
+      data-width="1920"
+      data-height="1080"
+    >
+      <svg width="0" height="0" style="position:absolute;">
+      <defs>
+        <filter id="neonCyanGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="5" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <filter id="neonRedGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <filter id="neonGreenGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="8" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+    </svg>
+      <div id="s3-layer" class="clip" data-start="0" data-duration="6.7" data-track-index="0">
+        <div class="stage-backdrop"></div>
+        <div class="tech-grid-bg"></div>
+        <div class="hud-corner hud-tl"></div>
+        <div class="hud-corner hud-tr"></div>
+        <div class="hud-corner hud-bl"></div>
+        <div class="hud-corner hud-br"></div>
+
+        <div class="hud-header">
+          <div class="hud-dot"></div>
+          <div class="hud-kicker" data-layout-ignore>KYBERNA IA // FASE 03: VALIDACIÓN CRUZADA GEOESPACIAL Y ASIGNACIÓN DE PESOS</div>
+        </div>
+
+        <div id="s3-radar-card">
+          <div class="phase-col-title" data-layout-ignore>INTERSECCIÓN MULTIFUENTE · RADAR GEOESPACIAL PIURA</div>
+          <div class="fusion-title" style="margin-bottom:12px;">Cruce Espacial en Tiempo Real</div>
+
+          <svg width="760" height="560" viewBox="0 0 760 560">
+            <circle cx="380" cy="285" r="230" fill="rgba(0, 35, 55, 0.28)" stroke="rgba(0, 240, 255, 0.25)" stroke-width="1.5" />
+            <circle cx="380" cy="285" r="155" fill="none" stroke="rgba(0, 240, 255, 0.20)" stroke-dasharray="8 6" />
+            <line x1="130" y1="285" x2="630" y2="285" stroke="rgba(0, 240, 255, 0.16)" />
+            <line x1="380" y1="45" x2="380" y2="525" stroke="rgba(0, 240, 255, 0.16)" />
+
+            <polygon
+              id="s3-senamhi-poly"
+              points="235,165 505,138 555,295 455,430 250,390"
+              fill="rgba(255, 0, 60, 0.18)"
+              stroke="#ff2a55"
+              stroke-width="3"
+              filter="url(#neonRedGlow)"
+            />
+            <text x="392" y="182" text-anchor="middle" class="hazard-pill-text" data-layout-ignore>
+              POLÍGONO ALERTA ROJA LLUVIAS · SENAMHI (90%)
+            </text>
+
+            <circle id="s3-match-ring" cx="388" cy="288" r="24" fill="none" stroke="#00ff66" stroke-width="6" style="opacity:0;" />
+
+            <g id="s3-press-pin">
+              <rect x="208" y="206" width="320" height="32" rx="8" fill="rgba(16, 8, 28, 0.94)" stroke="#c084fc" stroke-width="1.6" />
+              <text x="368" y="227" text-anchor="middle" class="badge-kicker violet-text" data-layout-ignore>
+                PRENSA / REPORTAJE · PESO 65%
+              </text>
+              <circle cx="352" cy="264" r="19" fill="rgba(192, 132, 252, 0.28)" stroke="#c084fc" stroke-width="2.8" />
+              <circle cx="352" cy="264" r="7" fill="#ffffff" />
+            </g>
+
+            <g id="s3-nlp-pin">
+              <circle cx="412" cy="306" r="20" fill="rgba(255, 145, 0, 0.28)" stroke="#ff9100" stroke-width="2.8" />
+              <circle cx="412" cy="306" r="7.5" fill="#ffffff" />
+              <rect x="218" y="338" width="388" height="34" rx="8" fill="rgba(8, 16, 28, 0.94)" stroke="#ff9100" stroke-width="1.6" />
+              <text x="412" y="360" text-anchor="middle" class="badge-kicker amber-text" data-layout-ignore>
+                REDES SOCIALES NLP (-5.09°, -80.16°) · 30%
+              </text>
+            </g>
+          </svg>
+        </div>
+
+        <div id="s3-weights-card">
+          <div>
+            <div class="phase-col-title" data-layout-ignore>MAGIA MATEMÁTICA · CRUCE DE PESOS DIFERENCIADOS</div>
+            <div class="fusion-title">Fusión Ponderada Multifuente</div>
+          </div>
+
+          <div class="weight-equation">
+            <div class="weight-pill wp-amber">Redes 30%</div>
+            <div class="wp-op">+</div>
+            <div class="weight-pill wp-violet">Prensa 65%</div>
+            <div class="wp-op">+</div>
+            <div class="weight-pill wp-cyan" id="s3-eq-result">SENAMHI 90%</div>
+          </div>
+
+          <div class="big-meter-box" id="s3-meter-box">
+            <div class="big-meter-top">
+              <div class="big-meter-label">Credibilidad Validada</div>
+              <div id="s3-cred-readout"><span id="s3-cred-num">30</span>%</div>
+            </div>
+            <div class="big-bar-track">
+              <div id="s3-cred-bar"></div>
+            </div>
+          </div>
+
+          <div class="zero-inspector-note">
+            Validado en el minuto cero sin viaje de inspector
+          </div>
+        </div>
+
+        <div class="confirm-banner-row">
+          <div id="s3-confirm-banner">
+            ✓ DESASTRE VALIDADO AL 95% EN MINUTO CERO · Calculando impacto...
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#s3-layer", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, 0.0);
+      tl.fromTo("#s3-senamhi-poly", { opacity: 0, scale: 0.88, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out" }, 0.3);
+      tl.fromTo("#s3-press-pin", { x: -190, y: -70, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.90, ease: "power3.out" }, 0.60);
+      tl.fromTo("#s3-nlp-pin", { x: -210, y: 70, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.95, ease: "power3.out" }, 0.82);
+
+      tl.fromTo("#s3-match-ring", { attr: { r: 22 }, opacity: 1 }, { attr: { r: 165 }, opacity: 0, duration: 1.25, ease: "power2.out" }, 1.85);
+      tl.to("#s3-senamhi-poly", { stroke: "#00ff66", fill: "rgba(0, 255, 102, 0.16)", duration: 0.45 }, 2.1);
+
+      tl.to("#s3-cred-bar", {
+        width: "95%",
+        background: "linear-gradient(90deg, #00c853, #00ff66)",
+        boxShadow: "0 0 28px rgba(0, 255, 102, 0.75)",
+        duration: 1.25,
+        ease: "power3.out"
+      }, 2.15);
+      tl.fromTo("#s3-cred-num", { textContent: 30 }, { textContent: 95, duration: 1.25, ease: "power3.out", snap: { textContent: 1 } }, 2.15);
+      tl.to("#s3-cred-readout", { color: "#00ff66", duration: 0.4 }, 2.3);
+      tl.to("#s3-eq-result", { borderColor: "#00ff66", color: "#00ff66", background: "rgba(0, 255, 102, 0.18)", duration: 0.4 }, 2.3);
+
+      tl.fromTo("#s3-confirm-banner", { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 2.75);
+
+      tl.to("#s3-layer", { opacity: 0, duration: 0.30, ease: "power2.in" }, 6.36);
+      tl.set("#s3-layer", { opacity: 0 }, 6.7);
+
+      window.__timelines["scene-3-validation"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

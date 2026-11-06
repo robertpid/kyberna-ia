@@ -1,0 +1,2780 @@
+{
+  "ok": false,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 4
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": false,
+    "errorCount": 6,
+    "warningCount": 4,
+    "infoCount": 31,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 1.667,
+        "selector": "#s1-piura-svg > text:nth-of-type(6)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 913.9,
+          "top": 505.2,
+          "right": 955.3,
+          "bottom": 519.2,
+          "width": 41.4,
+          "height": 14
+        },
+        "containerSelector": "#s1-piura-svg > g:nth-of-type(17) > text:nth-of-type(1)",
+        "text": "PIURA",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-1-collapse.html",
+        "bbox": {
+          "x": 913.9,
+          "y": 505.2,
+          "width": 41.4,
+          "height": 14
+        },
+        "firstSeen": 0.503,
+        "lastSeen": 10.894,
+        "occurrences": 66,
+        "heldMs": 10391,
+        "times": [
+          0.503,
+          0.67,
+          0.838,
+          1.006,
+          1.173,
+          1.341,
+          1.508,
+          1.667,
+          1.676,
+          1.844,
+          2.011,
+          2.179,
+          2.346,
+          2.514,
+          2.682,
+          2.849,
+          3.017,
+          3.184,
+          3.352,
+          3.52,
+          3.687,
+          3.855,
+          4.022,
+          4.19,
+          4.358,
+          4.525,
+          4.693,
+          4.86,
+          5,
+          5.028,
+          5.196,
+          5.363,
+          5.531,
+          5.698,
+          5.866,
+          6.034,
+          6.201,
+          6.369,
+          6.536,
+          6.704,
+          6.872,
+          7.039,
+          7.207,
+          7.374,
+          7.542,
+          7.709,
+          7.877,
+          8.045,
+          8.212,
+          8.333,
+          8.38,
+          8.547,
+          8.715,
+          8.883,
+          9.05,
+          9.218,
+          9.385,
+          9.553,
+          9.721,
+          9.888,
+          10.056,
+          10.223,
+          10.391,
+          10.559,
+          10.726,
+          10.894
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 21.667,
+        "selector": "#s3-piura-svg > text:nth-of-type(6)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 913.9,
+          "top": 505.2,
+          "right": 955.3,
+          "bottom": 519.2,
+          "width": 41.4,
+          "height": 14
+        },
+        "containerSelector": "#s3-piura-svg > g:nth-of-type(17) > text:nth-of-type(1)",
+        "text": "PIURA",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 913.9,
+          "y": 505.2,
+          "width": 41.4,
+          "height": 14
+        },
+        "firstSeen": 20.112,
+        "lastSeen": 30,
+        "occurrences": 63,
+        "heldMs": 9888.000000000002,
+        "times": [
+          20.112,
+          20.279,
+          20.447,
+          20.615,
+          20.782,
+          20.95,
+          21.117,
+          21.285,
+          21.453,
+          21.62,
+          21.667,
+          21.788,
+          21.955,
+          22.123,
+          22.291,
+          22.458,
+          22.626,
+          22.793,
+          22.961,
+          23.128,
+          23.296,
+          23.464,
+          23.631,
+          23.799,
+          23.966,
+          24.134,
+          24.302,
+          24.469,
+          24.637,
+          24.804,
+          24.972,
+          25,
+          25.14,
+          25.307,
+          25.475,
+          25.642,
+          25.81,
+          25.978,
+          26.145,
+          26.313,
+          26.48,
+          26.648,
+          26.816,
+          26.983,
+          27.151,
+          27.318,
+          27.486,
+          27.654,
+          27.821,
+          27.989,
+          28.156,
+          28.324,
+          28.333,
+          28.492,
+          28.659,
+          28.827,
+          28.994,
+          29.162,
+          29.33,
+          29.497,
+          29.665,
+          29.832,
+          30
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 28.333,
+        "selector": "#s3-hazard-zone > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 966.72,
+          "top": 649.46,
+          "right": 1249.84,
+          "bottom": 676.76,
+          "width": 283.12,
+          "height": 27.3
+        },
+        "containerSelector": "#s3-brand-tagline",
+        "text": "HUAICO · ALTO PIURA",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 966.72,
+          "y": 649.46,
+          "width": 283.12,
+          "height": 27.3
+        },
+        "firstSeen": 27.486,
+        "lastSeen": 30,
+        "occurrences": 17,
+        "heldMs": 2513.9999999999995,
+        "times": [
+          27.486,
+          27.654,
+          27.821,
+          27.989,
+          28.156,
+          28.324,
+          28.333,
+          28.492,
+          28.659,
+          28.827,
+          28.994,
+          29.162,
+          29.33,
+          29.497,
+          29.665,
+          29.832,
+          30
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(17) > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 829.43,
+          "top": 614.6,
+          "right": 895.55,
+          "bottom": 645.54,
+          "width": 66.12,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-brand-tagline",
+        "text": "Km 50",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 829.43,
+          "y": 614.6,
+          "width": 66.12,
+          "height": 30.94
+        },
+        "firstSeen": 26.313,
+        "lastSeen": 30,
+        "occurrences": 17,
+        "heldMs": 2346,
+        "times": [
+          26.313,
+          27.654,
+          27.821,
+          27.989,
+          28.156,
+          28.324,
+          28.333,
+          28.492,
+          28.659,
+          28.827,
+          28.994,
+          29.162,
+          29.33,
+          29.497,
+          29.665,
+          29.832,
+          30
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(18) > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 797.36,
+          "top": 442.38,
+          "right": 941.2,
+          "bottom": 473.32,
+          "width": 143.84,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-brand-title",
+        "text": "Tambogrande",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 797.36,
+          "y": 442.38,
+          "width": 143.84,
+          "height": 30.94
+        },
+        "firstSeen": 26.648,
+        "lastSeen": 30,
+        "occurrences": 22,
+        "heldMs": 3352.0000000000005,
+        "times": [
+          26.648,
+          26.816,
+          26.983,
+          27.151,
+          27.318,
+          27.486,
+          27.654,
+          27.821,
+          27.989,
+          28.156,
+          28.324,
+          28.333,
+          28.492,
+          28.659,
+          28.827,
+          28.994,
+          29.162,
+          29.33,
+          29.497,
+          29.665,
+          29.832,
+          30
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(24) > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 1054.96,
+          "top": 609.33,
+          "right": 1161.57,
+          "bottom": 640.27,
+          "width": 106.61,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-brand-tagline",
+        "text": "Morropón",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1054.96,
+          "y": 609.33,
+          "width": 106.61,
+          "height": 30.94
+        },
+        "firstSeen": 26.313,
+        "lastSeen": 30,
+        "occurrences": 17,
+        "heldMs": 2346,
+        "times": [
+          26.313,
+          27.654,
+          27.821,
+          27.989,
+          28.156,
+          28.324,
+          28.333,
+          28.492,
+          28.659,
+          28.827,
+          28.994,
+          29.162,
+          29.33,
+          29.497,
+          29.665,
+          29.832,
+          30
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "warning",
+        "time": 20.112,
+        "selector": "#s2-content > div:nth-of-type(1) > div:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 87,
+          "top": 40,
+          "right": 751.45,
+          "bottom": 59,
+          "width": 664.45,
+          "height": 19
+        },
+        "containerSelector": "#s3-hud > div:nth-of-type(2)",
+        "text": "ESCENA 02 // VALIDACIÓN MULTIFUENTE · NLP & TELEMETRÍA SENAMHI",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-2-nlp.html",
+        "bbox": {
+          "x": 87,
+          "y": 40,
+          "width": 664.45,
+          "height": 19
+        },
+        "firstSeen": 20.112,
+        "lastSeen": 20.279,
+        "occurrences": 2,
+        "heldMs": 167.0000000000016,
+        "times": [
+          20.112,
+          20.279
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "warning",
+        "time": 20.112,
+        "selector": "#s2-senamhi-row > div:nth-of-type(2) > div:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 355,
+          "top": 570,
+          "right": 475.53,
+          "bottom": 607,
+          "width": 120.53,
+          "height": 37
+        },
+        "containerSelector": "#s3-piura-svg > text:nth-of-type(1)",
+        "text": "SENAMHI",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-2-nlp.html",
+        "bbox": {
+          "x": 355,
+          "y": 570,
+          "width": 120.53,
+          "height": 37
+        },
+        "firstSeen": 20.112,
+        "lastSeen": 20.279,
+        "occurrences": 2,
+        "heldMs": 167.0000000000016,
+        "times": [
+          20.112,
+          20.279
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "warning",
+        "time": 26.313,
+        "selector": "#s3-piura-svg > text:nth-of-type(5)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 638.8,
+          "top": 503.67,
+          "right": 685.56,
+          "bottom": 519.49,
+          "width": 46.76,
+          "height": 15.82
+        },
+        "containerSelector": "#s3-brand-title",
+        "text": "PAITA",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 638.8,
+          "y": 503.67,
+          "width": 46.76,
+          "height": 15.82
+        },
+        "firstSeen": 26.313,
+        "lastSeen": 26.48,
+        "occurrences": 2,
+        "heldMs": 167.0000000000016,
+        "times": [
+          26.313,
+          26.48
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "warning",
+        "time": 26.313,
+        "selector": "#s3-piura-svg > g:nth-of-type(23) > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 964.85,
+          "top": 482.85,
+          "right": 1038.7,
+          "bottom": 502.06,
+          "width": 73.85,
+          "height": 19.21
+        },
+        "containerSelector": "#s3-brand-title",
+        "text": "Chulucanas",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 964.85,
+          "y": 482.85,
+          "width": 73.85,
+          "height": 19.21
+        },
+        "firstSeen": 26.313,
+        "lastSeen": 26.648,
+        "occurrences": 3,
+        "heldMs": 335.00000000000085,
+        "times": [
+          26.313,
+          26.48,
+          26.648
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 26.313,
+        "selector": "#s3-piura-svg > g:nth-of-type(10) > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 518.01,
+          "top": 528.66,
+          "right": 661.16,
+          "bottom": 545.61,
+          "width": 143.15,
+          "height": 16.95
+        },
+        "containerSelector": "#s3-brand-title",
+        "text": "PUNTO A · PIURA",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 518.01,
+          "y": 528.66,
+          "width": 143.15,
+          "height": 16.95
+        },
+        "firstSeen": 26.313,
+        "lastSeen": 26.313,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          26.313
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 26.313,
+        "selector": "#s3-piura-svg > g:nth-of-type(12) > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 608.22,
+          "top": 481.54,
+          "right": 639.43,
+          "bottom": 500.75,
+          "width": 31.21,
+          "height": 19.21
+        },
+        "containerSelector": "#s3-brand-title",
+        "text": "Paita",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 608.22,
+          "y": 481.54,
+          "width": 31.21,
+          "height": 19.21
+        },
+        "firstSeen": 26.313,
+        "lastSeen": 26.313,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          26.313
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 26.313,
+        "selector": "#s3-piura-svg > g:nth-of-type(22) > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 1237.63,
+          "top": 541.11,
+          "right": 1331.27,
+          "bottom": 560.32,
+          "width": 93.64,
+          "height": 19.21
+        },
+        "containerSelector": "#s3-brand-title",
+        "text": "Huancabamba",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1237.63,
+          "y": 541.11,
+          "width": 93.64,
+          "height": 19.21
+        },
+        "firstSeen": 26.313,
+        "lastSeen": 26.313,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          26.313
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": -110.97,
+          "top": 558.73,
+          "right": -16.35,
+          "bottom": 867.91,
+          "width": 94.62,
+          "height": 309.18
+        },
+        "containerSelector": "#root",
+        "text": "OCÉANO PACÍFICO",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 110.97
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": -110.97,
+          "y": 558.73,
+          "width": 94.62,
+          "height": 309.18
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > text:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1123.25,
+          "top": 336.23,
+          "right": 1228.72,
+          "bottom": 361.71,
+          "width": 105.47,
+          "height": 25.48
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "AYABACA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1123.25,
+          "y": 336.23,
+          "width": 105.47,
+          "height": 25.48
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > text:nth-of-type(3)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1320.07,
+          "top": 780.5,
+          "right": 1485.8,
+          "bottom": 805.98,
+          "width": 165.73,
+          "height": 25.48
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "HUANCABAMBA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1320.07,
+          "y": 780.5,
+          "width": 165.73,
+          "height": 25.48
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > text:nth-of-type(4)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1072.03,
+          "top": 696.05,
+          "right": 1192.58,
+          "bottom": 721.53,
+          "width": 120.55,
+          "height": 25.48
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "MORROPÓN",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1072.03,
+          "y": 696.05,
+          "width": 120.55,
+          "height": 25.48
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > text:nth-of-type(5)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 400.85,
+          "top": 582.3,
+          "right": 476.19,
+          "bottom": 607.78,
+          "width": 75.33,
+          "height": 25.48
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "PAITA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 400.85,
+          "y": 582.3,
+          "width": 75.33,
+          "height": 25.48
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > text:nth-of-type(6)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 820.18,
+          "top": 611.96,
+          "right": 895.51,
+          "bottom": 637.44,
+          "width": 75.33,
+          "height": 25.48
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "PIURA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 820.18,
+          "y": 611.96,
+          "width": 75.33,
+          "height": 25.48
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > text:nth-of-type(7)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 596.72,
+          "top": 1016.19,
+          "right": 702.2,
+          "bottom": 1041.67,
+          "width": 105.47,
+          "height": 25.48
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "SECHURA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 596.72,
+          "y": 1016.19,
+          "width": 105.47,
+          "height": 25.48
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > text:nth-of-type(8)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 631.85,
+          "top": 257.06,
+          "right": 737.32,
+          "bottom": 282.54,
+          "width": 105.47,
+          "height": 25.48
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "SULLANA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 631.85,
+          "y": 257.06,
+          "width": 105.47,
+          "height": 25.48
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > text:nth-of-type(9)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 360.01,
+          "top": 163.33,
+          "right": 450.42,
+          "bottom": 188.81,
+          "width": 90.4,
+          "height": 25.48
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "TALARA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 360.01,
+          "y": 163.33,
+          "width": 90.4,
+          "height": 25.48
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-hazard-zone > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 966.72,
+          "top": 649.46,
+          "right": 1249.84,
+          "bottom": 676.76,
+          "width": 283.12,
+          "height": 27.3
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "HUAICO · ALTO PIURA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 966.72,
+          "y": 649.46,
+          "width": 283.12,
+          "height": 27.3
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(10) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 206.25,
+          "top": 622.56,
+          "right": 436.88,
+          "bottom": 649.86,
+          "width": 230.63,
+          "height": 27.3
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "PUNTO A · PIURA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 206.25,
+          "y": 622.56,
+          "width": 230.63,
+          "height": 27.3
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(10) > text:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 183.45,
+          "top": 655.32,
+          "right": 459.69,
+          "bottom": 706.28,
+          "width": 276.24,
+          "height": 50.96
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Almacén Central",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 183.45,
+          "y": 655.32,
+          "width": 276.24,
+          "height": 50.96
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(11) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1553.47,
+          "top": 747.24,
+          "right": 1845.61,
+          "bottom": 774.54,
+          "width": 292.14,
+          "height": 27.3
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "PUNTO B · CANCHAQUE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1553.47,
+          "y": 747.24,
+          "width": 292.14,
+          "height": 27.3
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(11) > text:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1612,
+          "top": 780,
+          "right": 1787.09,
+          "bottom": 830.96,
+          "width": 175.09,
+          "height": 50.96
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Zona Cero",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1612,
+          "y": 780,
+          "width": 175.09,
+          "height": 50.96
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(12) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 351.59,
+          "top": 546.64,
+          "right": 401.87,
+          "bottom": 577.58,
+          "width": 50.28,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Paita",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 351.59,
+          "y": 546.64,
+          "width": 50.28,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(13) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 246.06,
+          "top": 217.75,
+          "right": 305.89,
+          "bottom": 248.69,
+          "width": 59.83,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Talara",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 246.06,
+          "y": 217.75,
+          "width": 59.83,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(14) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 613.75,
+          "top": 427.62,
+          "right": 688.66,
+          "bottom": 458.56,
+          "width": 74.9,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Sullana",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 613.75,
+          "y": 427.62,
+          "width": 74.9,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(15) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 522.18,
+          "top": 847.07,
+          "right": 605.11,
+          "bottom": 878.01,
+          "width": 82.92,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Sechura",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 522.18,
+          "y": 847.07,
+          "width": 82.92,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(16) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 610.99,
+          "top": 694.88,
+          "right": 704.6,
+          "bottom": 725.82,
+          "width": 93.62,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Catacaos",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 610.99,
+          "y": 694.88,
+          "width": 93.62,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(17) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 829.43,
+          "top": 614.6,
+          "right": 895.55,
+          "bottom": 645.54,
+          "width": 66.12,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Km 50",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 829.43,
+          "y": 614.6,
+          "width": 66.12,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(18) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 797.36,
+          "top": 442.38,
+          "right": 941.2,
+          "bottom": 473.32,
+          "width": 143.84,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Tambogrande",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 797.36,
+          "y": 442.38,
+          "width": 143.84,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(19) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 878.2,
+          "top": 266.64,
+          "right": 985.35,
+          "bottom": 297.58,
+          "width": 107.15,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Las Lomas",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 878.2,
+          "y": 266.64,
+          "width": 107.15,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(20) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1088.43,
+          "top": 250.38,
+          "right": 1161.11,
+          "bottom": 281.32,
+          "width": 72.69,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Paimas",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1088.43,
+          "y": 250.38,
+          "width": 72.69,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(21) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1228.34,
+          "top": 257.96,
+          "right": 1315.56,
+          "bottom": 288.9,
+          "width": 87.22,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Ayabaca",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1228.34,
+          "y": 257.96,
+          "width": 87.22,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(22) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1365.6,
+          "top": 642.61,
+          "right": 1516.46,
+          "bottom": 673.55,
+          "width": 150.86,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Huancabamba",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1365.6,
+          "y": 642.61,
+          "width": 150.86,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(23) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 926.14,
+          "top": 548.76,
+          "right": 1045.12,
+          "bottom": 579.7,
+          "width": 118.98,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Chulucanas",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 926.14,
+          "y": 548.76,
+          "width": 118.98,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(24) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1054.96,
+          "top": 609.33,
+          "right": 1161.57,
+          "bottom": 640.27,
+          "width": 106.61,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Morropón",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1054.96,
+          "y": 609.33,
+          "width": 106.61,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 28.333,
+        "selector": "#s3-piura-svg > g:nth-of-type(25) > text:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1166.47,
+          "top": 709.02,
+          "right": 1236.57,
+          "bottom": 739.96,
+          "width": 70.1,
+          "height": 30.94
+        },
+        "containerSelector": "#s3-hero-veil",
+        "text": "Salitral",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1166.47,
+          "y": 709.02,
+          "width": 70.1,
+          "height": 30.94
+        },
+        "firstSeen": 28.333,
+        "lastSeen": 28.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.333
+        ]
+      }
+    ],
+    "duration": 30,
+    "samples": [
+      1.667,
+      5,
+      8.333,
+      11.667,
+      15,
+      18.333,
+      21.667,
+      25,
+      28.333
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 41,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": false,
+    "errorCount": 17,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.76:1; WCAG AA requires 4.5:1.",
+        "text": "OCÉANO PACÍFICO",
+        "fg": "rgb(0,63,68)",
+        "bg": "rgb(0,4,5)",
+        "ratio": 1.76,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(82,125,128)",
+        "large": false,
+        "selector": "div > div:nth-of-type(1) > div > div:nth-of-type(7) > svg > text:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-1-collapse.html",
+        "bbox": {
+          "x": 402.2840881347656,
+          "y": 475.950927734375,
+          "width": 51.986480712890625,
+          "height": 169.8807373046875
+        },
+        "time": 1.667,
+        "times": [
+          1.667,
+          8.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.97:1; WCAG AA requires 4.5:1.",
+        "text": "AYABACA",
+        "fg": "rgb(46,73,92)",
+        "bg": "rgb(4,20,33)",
+        "ratio": 1.97,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(109,128,141)",
+        "large": false,
+        "selector": "div > div:nth-of-type(1) > div > div:nth-of-type(7) > svg > text:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-1-collapse.html",
+        "bbox": {
+          "x": 1079.4234619140625,
+          "y": 353.70001220703125,
+          "width": 58.953125,
+          "height": 14
+        },
+        "time": 1.667,
+        "times": [
+          1.667,
+          8.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.95:1; WCAG AA requires 4.5:1.",
+        "text": "HUANCABAMBA",
+        "fg": "rgb(72,73,82)",
+        "bg": "rgb(41,20,19)",
+        "ratio": 1.95,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(129,129,136)",
+        "large": false,
+        "selector": "div > div:nth-of-type(1) > div > div:nth-of-type(7) > svg > text:nth-of-type(3)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-1-collapse.html",
+        "bbox": {
+          "x": 1188.5687255859375,
+          "y": 597.7999877929688,
+          "width": 91.0625,
+          "height": 14
+        },
+        "time": 8.333,
+        "times": [
+          1.667,
+          8.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.72:1; WCAG AA requires 4.5:1.",
+        "text": "MORROPÓN",
+        "fg": "rgb(100,63,89)",
+        "bg": "rgb(81,7,28)",
+        "ratio": 1.72,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(158,135,151)",
+        "large": false,
+        "selector": "div > div:nth-of-type(1) > div > div:nth-of-type(7) > svg > text:nth-of-type(4)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-1-collapse.html",
+        "bbox": {
+          "x": 1052.2828369140625,
+          "y": 551.4000244140625,
+          "width": 66.234375,
+          "height": 14
+        },
+        "time": 8.333,
+        "times": [
+          1.667,
+          8.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.92:1; WCAG AA requires 4.5:1.",
+        "text": "PAITA",
+        "fg": "rgb(47,68,87)",
+        "bg": "rgb(5,14,25)",
+        "ratio": 1.92,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(109,124,137)",
+        "large": false,
+        "selector": "div > div:nth-of-type(1) > div > div:nth-of-type(7) > svg > text:nth-of-type(5)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-1-collapse.html",
+        "bbox": {
+          "x": 683.5046997070312,
+          "y": 488.8999938964844,
+          "width": 41.390625,
+          "height": 14
+        },
+        "time": 1.667,
+        "times": [
+          1.667,
+          8.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.96:1; WCAG AA requires 4.5:1.",
+        "text": "PIURA",
+        "fg": "rgb(46,87,108)",
+        "bg": "rgb(4,41,55)",
+        "ratio": 1.96,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(116,144,158)",
+        "large": false,
+        "selector": "div > div:nth-of-type(1) > div > div:nth-of-type(7) > svg > text:nth-of-type(6)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-1-collapse.html",
+        "bbox": {
+          "x": 913.9046630859375,
+          "y": 505.20001220703125,
+          "width": 41.390625,
+          "height": 14
+        },
+        "time": 1.667,
+        "times": [
+          1.667,
+          8.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.97:1; WCAG AA requires 4.5:1.",
+        "text": "SECHURA",
+        "fg": "rgb(46,73,92)",
+        "bg": "rgb(4,20,33)",
+        "ratio": 1.97,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(109,128,141)",
+        "large": false,
+        "selector": "div > div:nth-of-type(1) > div > div:nth-of-type(7) > svg > text:nth-of-type(7)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-1-collapse.html",
+        "bbox": {
+          "x": 791.1234130859375,
+          "y": 727.2999877929688,
+          "width": 57.953125,
+          "height": 14
+        },
+        "time": 1.667,
+        "times": [
+          1.667,
+          8.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.97:1; WCAG AA requires 4.5:1.",
+        "text": "SULLANA",
+        "fg": "rgb(46,73,91)",
+        "bg": "rgb(4,20,32)",
+        "ratio": 1.97,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(109,128,141)",
+        "large": false,
+        "selector": "div > div:nth-of-type(1) > div > div:nth-of-type(7) > svg > text:nth-of-type(8)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-1-collapse.html",
+        "bbox": {
+          "x": 810.4234619140625,
+          "y": 310.20001220703125,
+          "width": 57.953125,
+          "height": 14
+        },
+        "time": 1.667,
+        "times": [
+          1.667,
+          8.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.96:1; WCAG AA requires 4.5:1.",
+        "text": "TALARA",
+        "fg": "rgb(46,72,91)",
+        "bg": "rgb(4,19,31)",
+        "ratio": 1.96,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(108,127,140)",
+        "large": false,
+        "selector": "div > div:nth-of-type(1) > div > div:nth-of-type(7) > svg > text:nth-of-type(9)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-1-collapse.html",
+        "bbox": {
+          "x": 661.0640869140625,
+          "y": 258.70001220703125,
+          "width": 49.671875,
+          "height": 14
+        },
+        "time": 1.667,
+        "times": [
+          1.667,
+          8.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.76:1; WCAG AA requires 4.5:1.",
+        "text": "OCÉANO PACÍFICO",
+        "fg": "rgb(0,63,68)",
+        "bg": "rgb(0,4,5)",
+        "ratio": 1.76,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(82,125,128)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > div > div:nth-of-type(8) > svg > text:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 402.2840881347656,
+          "y": 475.950927734375,
+          "width": 51.986480712890625,
+          "height": 169.8807373046875
+        },
+        "time": 21.667,
+        "times": [
+          21.667
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.89:1; WCAG AA requires 4.5:1.",
+        "text": "AYABACA",
+        "fg": "rgb(44,66,77)",
+        "bg": "rgb(1,11,11)",
+        "ratio": 1.89,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(108,123,131)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > div > div:nth-of-type(8) > svg > text:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1121.4267578125,
+          "y": 336.23406982421875,
+          "width": 107.294677734375,
+          "height": 25.47998046875
+        },
+        "time": 28.333,
+        "times": [
+          21.667,
+          28.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.89:1; WCAG AA requires 4.5:1.",
+        "text": "HUANCABAMBA",
+        "fg": "rgb(51,65,73)",
+        "bg": "rgb(11,9,5)",
+        "ratio": 1.89,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(112,122,127)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > div > div:nth-of-type(8) > svg > text:nth-of-type(3)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1320.071044921875,
+          "y": 780.4959716796875,
+          "width": 165.73388671875,
+          "height": 25.47998046875
+        },
+        "time": 28.333,
+        "times": [
+          21.667,
+          28.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.72:1; WCAG AA requires 4.5:1.",
+        "text": "MORROPÓN",
+        "fg": "rgb(100,64,87)",
+        "bg": "rgb(81,8,26)",
+        "ratio": 1.72,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(158,135,150)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > div > div:nth-of-type(8) > svg > text:nth-of-type(4)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1052.2828369140625,
+          "y": 551.4000244140625,
+          "width": 66.234375,
+          "height": 14
+        },
+        "time": 21.667,
+        "times": [
+          21.667,
+          28.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.86:1; WCAG AA requires 4.5:1.",
+        "text": "PAITA",
+        "fg": "rgb(44,63,74)",
+        "bg": "rgb(1,6,7)",
+        "ratio": 1.86,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(108,121,129)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > div > div:nth-of-type(8) > svg > text:nth-of-type(5)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 400.8546142578125,
+          "y": 582.2980346679688,
+          "width": 75.3309326171875,
+          "height": 25.47998046875
+        },
+        "time": 28.333,
+        "times": [
+          21.667,
+          28.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.95:1; WCAG AA requires 4.5:1.",
+        "text": "PIURA",
+        "fg": "rgb(44,72,82)",
+        "bg": "rgb(1,19,18)",
+        "ratio": 1.95,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(107,127,134)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > div > div:nth-of-type(8) > svg > text:nth-of-type(6)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 820.1824951171875,
+          "y": 611.9640502929688,
+          "width": 75.3309326171875,
+          "height": 25.47998046875
+        },
+        "time": 28.333,
+        "times": [
+          21.667,
+          28.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.86:1; WCAG AA requires 4.5:1.",
+        "text": "SECHURA",
+        "fg": "rgb(44,63,73)",
+        "bg": "rgb(1,6,6)",
+        "ratio": 1.86,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(108,121,128)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > div > div:nth-of-type(8) > svg > text:nth-of-type(7)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 596.7205810546875,
+          "y": 1016.18603515625,
+          "width": 105.4747314453125,
+          "height": 25.47998046875
+        },
+        "time": 28.333,
+        "times": [
+          21.667,
+          28.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.88:1; WCAG AA requires 4.5:1.",
+        "text": "SULLANA",
+        "fg": "rgb(44,65,75)",
+        "bg": "rgb(1,9,9)",
+        "ratio": 1.88,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(107,122,129)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > div > div:nth-of-type(8) > svg > text:nth-of-type(8)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 631.8466796875,
+          "y": 257.06402587890625,
+          "width": 105.4747314453125,
+          "height": 25.48004150390625
+        },
+        "time": 28.333,
+        "times": [
+          21.667,
+          28.333
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.85:1; WCAG AA requires 4.5:1.",
+        "text": "TALARA",
+        "fg": "rgb(44,62,73)",
+        "bg": "rgb(1,5,5)",
+        "ratio": 1.85,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(107,120,127)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > div > div:nth-of-type(8) > svg > text:nth-of-type(9)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 360.0126953125,
+          "y": 163.33404541015625,
+          "width": 90.4027099609375,
+          "height": 25.47998046875
+        },
+        "time": 28.333,
+        "times": [
+          21.667,
+          28.333
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      1.667,
+      8.333,
+      15,
+      21.667,
+      28.333
+    ],
+    "checked": 127,
+    "passed": 92
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 3,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 32 text elements stay under it for 0.5 s or more, the smallest \"AYABACA\" at 12 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "AYABACA",
+        "selector": "#s1-piura-svg > text:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-1-collapse.html",
+        "bbox": {
+          "x": 1080.42,
+          "y": 353.7,
+          "width": 57.96,
+          "height": 14
+        },
+        "time": 0,
+        "times": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          3.5,
+          5.75,
+          5.75
+        ],
+        "fontPx": 12,
+        "floorPx": 28,
+        "seconds": 11,
+        "elements": [
+          {
+            "selector": "#s1-piura-svg > text:nth-of-type(2)",
+            "text": "AYABACA",
+            "fontPx": 12,
+            "time": 0,
+            "seconds": 11
+          },
+          {
+            "selector": "#s1-piura-svg > text:nth-of-type(3)",
+            "text": "HUANCABAMBA",
+            "fontPx": 12,
+            "time": 0,
+            "seconds": 11
+          },
+          {
+            "selector": "#s1-piura-svg > text:nth-of-type(4)",
+            "text": "MORROPÓN",
+            "fontPx": 12,
+            "time": 0,
+            "seconds": 11
+          },
+          {
+            "selector": "#s1-piura-svg > text:nth-of-type(5)",
+            "text": "PAITA",
+            "fontPx": 12,
+            "time": 0,
+            "seconds": 11
+          },
+          {
+            "selector": "#s1-piura-svg > text:nth-of-type(6)",
+            "text": "PIURA",
+            "fontPx": 12,
+            "time": 0,
+            "seconds": 11
+          },
+          {
+            "selector": "#s1-piura-svg > text:nth-of-type(7)",
+            "text": "SECHURA",
+            "fontPx": 12,
+            "time": 0,
+            "seconds": 11
+          },
+          {
+            "selector": "#s1-piura-svg > text:nth-of-type(8)",
+            "text": "SULLANA",
+            "fontPx": 12,
+            "time": 0,
+            "seconds": 11
+          },
+          {
+            "selector": "#s1-piura-svg > text:nth-of-type(9)",
+            "text": "TALARA",
+            "fontPx": 12,
+            "time": 0,
+            "seconds": 11
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(10) > text:nth-of-type(1)",
+            "text": "PUNTO A · PIURA",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(11) > text:nth-of-type(1)",
+            "text": "PUNTO B · CANCHAQUE",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(12) > text:nth-of-type(1)",
+            "text": "Paita",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(13) > text:nth-of-type(1)",
+            "text": "Talara",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(14) > text:nth-of-type(1)",
+            "text": "Sullana",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(15) > text:nth-of-type(1)",
+            "text": "Sechura",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(16) > text:nth-of-type(1)",
+            "text": "Catacaos",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(17) > text:nth-of-type(1)",
+            "text": "Km 50",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(18) > text:nth-of-type(1)",
+            "text": "Tambogrande",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(19) > text:nth-of-type(1)",
+            "text": "Las Lomas",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(20) > text:nth-of-type(1)",
+            "text": "Paimas",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(21) > text:nth-of-type(1)",
+            "text": "Ayabaca",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(22) > text:nth-of-type(1)",
+            "text": "Huancabamba",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(23) > text:nth-of-type(1)",
+            "text": "Chulucanas",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(24) > text:nth-of-type(1)",
+            "text": "Morropón",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(25) > text:nth-of-type(1)",
+            "text": "Salitral",
+            "fontPx": 13,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-hazard-zone > text:nth-of-type(1)",
+            "text": "HUAICO · ALTO PIURA",
+            "fontPx": 13,
+            "time": 3.5,
+            "seconds": 7.5
+          },
+          {
+            "selector": "#s1-piura-svg > text:nth-of-type(1)",
+            "text": "OCÉANO PACÍFICO",
+            "fontPx": 14,
+            "time": 0,
+            "seconds": 11
+          },
+          {
+            "selector": "#s1-layer > div:nth-of-type(3)",
+            "text": "DEPARTAMENTO DE PIURA · 8 PROVINCIAS · MONITOREO HIDROLÓGICO",
+            "fontPx": 14,
+            "time": 0,
+            "seconds": 11
+          },
+          {
+            "selector": "#s1-layer > div:nth-of-type(1) > div:nth-of-type(2)",
+            "text": "ESCENA 01 // REGIÓN PIURA, PERÚ · RED LOGÍSTICA NACIONAL",
+            "fontPx": 16,
+            "time": 0,
+            "seconds": 11
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(10) > text:nth-of-type(2)",
+            "text": "Almacén Central",
+            "fontPx": 21,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-piura-svg > g:nth-of-type(11) > text:nth-of-type(2)",
+            "text": "Zona Cero",
+            "fontPx": 21,
+            "time": 0.75,
+            "seconds": 10.25
+          },
+          {
+            "selector": "#s1-delay-text",
+            "text": "Retraso logístico: horas",
+            "fontPx": 27,
+            "time": 5.75,
+            "seconds": 5.25
+          },
+          {
+            "selector": "#s1-delay-num",
+            "text": "4",
+            "fontPx": 27,
+            "time": 5.75,
+            "seconds": 5.25
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 7 text elements stay under it for 0.5 s or more, the smallest \"NLP + METEO\" at 13 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "NLP + METEO",
+        "selector": "div.ai-core-sub",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-2-nlp.html",
+        "bbox": {
+          "x": 1321.54,
+          "y": 488.62,
+          "width": 76.91,
+          "height": 15.44
+        },
+        "time": 11.5,
+        "times": [
+          11,
+          11.25,
+          11.375,
+          11.5,
+          11.5,
+          11.5,
+          11.5
+        ],
+        "fontPx": 12.72,
+        "floorPx": 28,
+        "seconds": 8.875,
+        "elements": [
+          {
+            "selector": "div.ai-core-sub",
+            "text": "NLP + METEO",
+            "fontPx": 12.72,
+            "time": 11.5,
+            "seconds": 8.875
+          },
+          {
+            "selector": "#s2-content > div:nth-of-type(1) > div:nth-of-type(2)",
+            "text": "ESCENA 02 // VALIDACIÓN MULTIFUENTE · NLP & TELEMETRÍA SENAMHI",
+            "fontPx": 16,
+            "time": 11,
+            "seconds": 9.375
+          },
+          {
+            "selector": "div.credibility-meta.meta-amber",
+            "text": "% · Baja credibilidad (Reportes Piura)",
+            "fontPx": 16,
+            "time": 11.25,
+            "seconds": 9.125
+          },
+          {
+            "selector": "#s2-social-pct",
+            "text": "0",
+            "fontPx": 16,
+            "time": 11.375,
+            "seconds": 9
+          },
+          {
+            "selector": "div.credibility-meta.meta-cyan",
+            "text": "% · Alta credibilidad (Cuenca Río Piura)",
+            "fontPx": 16,
+            "time": 11.5,
+            "seconds": 8.875
+          },
+          {
+            "selector": "#s2-senamhi-pct",
+            "text": "0",
+            "fontPx": 16,
+            "time": 11.5,
+            "seconds": 8.875
+          },
+          {
+            "selector": "div.ai-engine-header",
+            "text": "Motor de Inferencia IA",
+            "fontPx": 20.89,
+            "time": 11.5,
+            "seconds": 8.875
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 30 text elements stay under it for 0.5 s or more, the smallest \"AYABACA\" at 12 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "AYABACA",
+        "selector": "#s3-piura-svg > text:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/scene-3-routing.html",
+        "bbox": {
+          "x": 1081.04,
+          "y": 352.75,
+          "width": 58.25,
+          "height": 14.07
+        },
+        "time": 20.25,
+        "times": [
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25,
+          20.25
+        ],
+        "fontPx": 12,
+        "floorPx": 28,
+        "seconds": 9.75,
+        "elements": [
+          {
+            "selector": "#s3-piura-svg > text:nth-of-type(2)",
+            "text": "AYABACA",
+            "fontPx": 12,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > text:nth-of-type(3)",
+            "text": "HUANCABAMBA",
+            "fontPx": 12,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > text:nth-of-type(4)",
+            "text": "MORROPÓN",
+            "fontPx": 12,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > text:nth-of-type(5)",
+            "text": "PAITA",
+            "fontPx": 12,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > text:nth-of-type(6)",
+            "text": "PIURA",
+            "fontPx": 12,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > text:nth-of-type(7)",
+            "text": "SECHURA",
+            "fontPx": 12,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > text:nth-of-type(8)",
+            "text": "SULLANA",
+            "fontPx": 12,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > text:nth-of-type(9)",
+            "text": "TALARA",
+            "fontPx": 12,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-hazard-zone > text:nth-of-type(1)",
+            "text": "HUAICO · ALTO PIURA",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(10) > text:nth-of-type(1)",
+            "text": "PUNTO A · PIURA",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(11) > text:nth-of-type(1)",
+            "text": "PUNTO B · CANCHAQUE",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(12) > text:nth-of-type(1)",
+            "text": "Paita",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(13) > text:nth-of-type(1)",
+            "text": "Talara",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(14) > text:nth-of-type(1)",
+            "text": "Sullana",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(15) > text:nth-of-type(1)",
+            "text": "Sechura",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(16) > text:nth-of-type(1)",
+            "text": "Catacaos",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(17) > text:nth-of-type(1)",
+            "text": "Km 50",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(18) > text:nth-of-type(1)",
+            "text": "Tambogrande",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(19) > text:nth-of-type(1)",
+            "text": "Las Lomas",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(20) > text:nth-of-type(1)",
+            "text": "Paimas",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(21) > text:nth-of-type(1)",
+            "text": "Ayabaca",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(22) > text:nth-of-type(1)",
+            "text": "Huancabamba",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(23) > text:nth-of-type(1)",
+            "text": "Chulucanas",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(24) > text:nth-of-type(1)",
+            "text": "Morropón",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(25) > text:nth-of-type(1)",
+            "text": "Salitral",
+            "fontPx": 13,
+            "time": 20.25,
+            "seconds": 9.75
+          },
+          {
+            "selector": "#s3-piura-svg > text:nth-of-type(1)",
+            "text": "OCÉANO PACÍFICO",
+            "fontPx": 14,
+            "time": 20.25,
+            "seconds": 6.75
+          },
+          {
+            "selector": "#s3-region-pill",
+            "text": "RUTA ÓPTIMA: PIURA → SULLANA → TAMBOGRANDE → LAS LOMAS → AYABACA → CANCHAQUE",
+            "fontPx": 14,
+            "time": 20.25,
+            "seconds": 5.875
+          },
+          {
+            "selector": "#s3-hud > div:nth-of-type(2)",
+            "text": "ESCENA 03 // ENRUTAMIENTO DINÁMICO A* · CORREDOR NORTE PIURA",
+            "fontPx": 16,
+            "time": 20.25,
+            "seconds": 5.875
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(10) > text:nth-of-type(2)",
+            "text": "Almacén Central",
+            "fontPx": 21,
+            "time": 20.25,
+            "seconds": 6.25
+          },
+          {
+            "selector": "#s3-piura-svg > g:nth-of-type(11) > text:nth-of-type(2)",
+            "text": "Zona Cero",
+            "fontPx": 21,
+            "time": 20.25,
+            "seconds": 6.25
+          }
+        ]
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 240
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

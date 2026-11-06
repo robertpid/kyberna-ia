@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <link rel="stylesheet" href="../assets/styles/kyberna.css" />
+    <style>#root { position: relative; width: 1920px; height: 1080px; overflow: hidden; }</style>
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="scene-2-ingesta-nlp"
+      data-start="0"
+      data-duration="7.6"
+      data-width="1920"
+      data-height="1080"
+    >
+      <svg width="0" height="0" style="position:absolute;">
+      <defs>
+        <filter id="neonCyanGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="5" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <filter id="neonRedGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <filter id="neonGreenGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="8" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+    </svg>
+      <div id="s2-layer" class="clip" data-start="0" data-duration="7.6" data-track-index="0">
+        <div id="s2-wipe-curtain">
+          <div class="tech-grid-bg"></div>
+          <div class="hud-corner hud-tl"></div>
+          <div class="hud-corner hud-tr"></div>
+          <div class="hud-corner hud-bl"></div>
+          <div class="hud-corner hud-br"></div>
+        </div>
+        <div id="s2-laser-bar"></div>
+
+        <div id="s2-content" style="position:absolute; inset:0; z-index:42; opacity:0;">
+          <div class="hud-header">
+            <div class="hud-dot"></div>
+            <div class="hud-kicker" data-layout-ignore>KYBERNA IA // FASE 01: INGESTA MULTIFUENTE CON PESOS DIFERENCIADOS  ➔  FASE 02: NLP</div>
+          </div>
+
+          <svg width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute; inset:0; pointer-events:none;">
+            <path
+              id="s2-nlp-stream-1"
+              d="M 890 222 C 965 222, 975 290, 1050 290"
+              fill="none"
+              stroke="#ff9100"
+              stroke-width="3.6"
+              stroke-dasharray="210"
+              stroke-dashoffset="210"
+              filter="url(#neonCyanGlow)"
+            />
+            <path
+              id="s2-nlp-stream-2"
+              d="M 890 388 C 965 388, 975 330, 1050 330"
+              fill="none"
+              stroke="#c084fc"
+              stroke-width="3.6"
+              stroke-dasharray="210"
+              stroke-dashoffset="210"
+              filter="url(#neonCyanGlow)"
+            />
+          </svg>
+
+          <div id="s2-ingesta-col">
+            <div class="phase-col-title" data-layout-ignore>FASE 01 · FUENTES MÚLTIPLES CON PESOS DIFERENCIADOS</div>
+
+            <div id="s2-citizen-row" class="ingesta-row">
+              <div class="data-orb orb-amber">
+                <div class="orb-ring-h"></div>
+                <div class="orb-ring-v"></div>
+                <div class="orb-core-dot"></div>
+              </div>
+              <div class="ingesta-card ingesta-card-amber">
+                <div class="ingesta-header-line">
+                  <div class="source-title">Redes Sociales y Otros</div>
+                  <div class="source-subtag tag-amber" data-layout-ignore>X · FACEBOOK · CIUDADANOS</div>
+                </div>
+                <div class="source-desc" data-layout-ignore>No estructurados · Inmediatos · Riesgo de fake news</div>
+                <div class="bar-track"><div id="s2-citizen-bar" class="bar-fill fill-amber"></div></div>
+                <div class="credibility-meta meta-amber"><span id="s2-citizen-pct">0</span>% · Peso base diferenciado</div>
+              </div>
+            </div>
+
+            <div id="s2-press-row" class="ingesta-row">
+              <div class="data-orb orb-violet">
+                <div class="orb-ring-h"></div>
+                <div class="orb-ring-v"></div>
+                <div class="orb-core-dot"></div>
+              </div>
+              <div class="ingesta-card ingesta-card-violet">
+                <div class="ingesta-header-line">
+                  <div class="source-title">Prensa y Reportaje</div>
+                  <div class="source-subtag tag-violet" data-layout-ignore>PÁGINAS DE PERIODISMO</div>
+                </div>
+                <div class="source-desc" data-layout-ignore>Compañías de reportaje y medios · Latencia media</div>
+                <div class="bar-track"><div id="s2-press-bar" class="bar-fill fill-violet"></div></div>
+                <div class="credibility-meta meta-violet"><span id="s2-press-pct">0</span>% · Peso base diferenciado</div>
+              </div>
+            </div>
+
+            <div id="s2-official-row" class="ingesta-row">
+              <div class="data-orb orb-cyan">
+                <div class="orb-ring-h"></div>
+                <div class="orb-ring-v"></div>
+                <div class="orb-core-dot"></div>
+              </div>
+              <div class="ingesta-card ingesta-card-cyan">
+                <div class="ingesta-header-line">
+                  <div class="source-title">Fuentes Oficiales</div>
+                  <div class="source-subtag tag-cyan" data-layout-ignore>SENAMHI · INDECI · NASA</div>
+                </div>
+                <div class="source-desc" data-layout-ignore>Estructuradas · Alta latencia · Polígonos meteorológicos</div>
+                <div class="bar-track"><div id="s2-official-bar" class="bar-fill fill-cyan"></div></div>
+                <div class="credibility-meta meta-cyan"><span id="s2-official-pct">0</span>% · Peso base diferenciado</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="s2-nlp-panel">
+            <div class="phase-col-title" data-layout-ignore>FASE 02 · PROCESAMIENTO DE LENGUAJE NATURAL (NLP)</div>
+            <div class="nlp-panel-title">Extracción Automática de Entidades</div>
+            <div class="raw-tweet-box" data-layout-ignore>
+              "[Redes + Prensa Regional]: ¡Urgente! Fuerte huaico y puente caído bloquean carretera Piura - Sullana (Alto Piura)"
+            </div>
+
+            <div class="entity-list">
+              <div id="s2-ent-1" class="entity-chip">
+                <div class="entity-key" data-layout-ignore>UBICACIÓN</div>
+                <div class="entity-val">Carretera Piura – Sullana</div>
+              </div>
+              <div id="s2-ent-2" class="entity-chip">
+                <div class="entity-key" data-layout-ignore>TIPO DE DESASTRE</div>
+                <div class="entity-val">Huaico / Puente Caído</div>
+              </div>
+              <div id="s2-ent-3" class="entity-chip">
+                <div class="entity-key" data-layout-ignore>GRAVEDAD</div>
+                <div class="entity-val entity-val-red">Crítica · Bloqueo Total</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#s2-wipe-curtain", { x: 0 }, { x: 1960, duration: 0.85, ease: "power2.inOut" }, 0.0);
+      tl.fromTo("#s2-laser-bar", { x: 0, opacity: 1 }, { x: 1960, opacity: 0, duration: 0.85, ease: "power2.inOut" }, 0.0);
+      tl.set("#s2-content", { opacity: 1 }, 0.82);
+
+      tl.fromTo("#s2-citizen-row", { x: -760, opacity: 0 }, { x: 0, opacity: 1, duration: 0.90, ease: "power3.out" }, 0.86);
+      tl.fromTo("#s2-press-row", { x: -760, opacity: 0 }, { x: 0, opacity: 1, duration: 0.90, ease: "power3.out" }, 1.00);
+      tl.fromTo("#s2-official-row", { x: -760, opacity: 0 }, { x: 0, opacity: 1, duration: 0.90, ease: "power3.out" }, 1.14);
+
+      tl.to("#s2-citizen-bar", { width: "30%", duration: 1.05, ease: "power3.out" }, 1.92);
+      tl.fromTo("#s2-citizen-pct", { textContent: 0 }, { textContent: 30, duration: 1.05, ease: "power3.out", snap: { textContent: 1 } }, 1.92);
+      tl.to("#s2-press-bar", { width: "65%", duration: 1.05, ease: "power3.out" }, 1.98);
+      tl.fromTo("#s2-press-pct", { textContent: 0 }, { textContent: 65, duration: 1.05, ease: "power3.out", snap: { textContent: 1 } }, 1.98);
+      tl.to("#s2-official-bar", { width: "90%", duration: 1.05, ease: "power3.out" }, 2.04);
+      tl.fromTo("#s2-official-pct", { textContent: 0 }, { textContent: 90, duration: 1.05, ease: "power3.out", snap: { textContent: 1 } }, 2.04);
+
+      tl.to("#s2-nlp-stream-1, #s2-nlp-stream-2", { strokeDashoffset: 0, duration: 0.55, ease: "power2.out" }, 3.12);
+      tl.fromTo("#s2-nlp-panel", { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 3.22);
+
+      tl.fromTo("#s2-ent-1", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, 3.75);
+      tl.fromTo("#s2-ent-2", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, 4.25);
+      tl.fromTo("#s2-ent-3", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, 4.75);
+
+      tl.to("#s2-layer", { opacity: 0, duration: 0.30, ease: "power2.in" }, 7.28);
+      tl.set("#s2-layer", { opacity: 0 }, 7.6);
+
+      window.__timelines["scene-2-ingesta-nlp"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
