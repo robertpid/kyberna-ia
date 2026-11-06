@@ -126,6 +126,17 @@ export default function App() {
   };
 
   const handleSelectStage = async (stageId) => {
+    // Cambio inmediato optimista de pestaña para latencia percibida cero
+    if (stageId === "etapa_4") {
+      setActiveRightTab("humanitarian");
+    } else if (stageId === "etapa_3") {
+      setActiveRightTab("web_scraping");
+    } else if (stageId === "etapa_2") {
+      setActiveRightTab("ml_audit");
+    } else if (stageId === "etapa_1") {
+      setActiveRightTab("nlp");
+    }
+
     setIsBusy(true);
     try {
       const res = await fetch("/api/v1/stage", {
@@ -133,7 +144,7 @@ export default function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           stage: stageId,
-          dispatch_notifications: true,
+          dispatch_notifications: stageId === "etapa_4",
           telegram_bot_token: telegramCreds.botToken || null,
           telegram_chat_id: telegramCreds.chatId || null,
         }),
@@ -143,11 +154,6 @@ export default function App() {
       }
       const json = await res.json();
       applyServerSnapshot(json);
-      if (stageId === "etapa_3") {
-        setActiveRightTab("web_scraping");
-      } else if (stageId === "etapa_2") {
-        setActiveRightTab("notifications");
-      }
     } catch (err) {
       setErrorBanner(`Error activando etapa: ${err.message}`);
     } finally {
@@ -310,6 +316,7 @@ export default function App() {
           onResetReports={handleResetReports}
           onDispatchNotifications={() => handleDispatchNotifications()}
           onOpenTelegramModal={() => setIsTelegramModalOpen(true)}
+          onFocusEmergencyMap={() => setFocusTriggerCount((prev) => prev + 1)}
         />
       </main>
 

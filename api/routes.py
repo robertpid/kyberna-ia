@@ -11,7 +11,7 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Literal
 
-from fastapi import FastAPI, HTTPException
+from fastapi import BackgroundTasks, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -189,14 +189,35 @@ class KybernaRuntimeStore:
             new_report.report_id,
         )
 
+    def dispatch_alerts_worker(
+        self,
+        decision: OrchestratorDecision,
+        override_bot_token: str | None = None,
+        override_chat_id: str | None = None,
+    ) -> None:
+        """Despacha alertas externas en segundo plano sin congelar la latencia HTTP."""
+        try:
+            self.latest_whatsapp_receipt = send_whatsapp_mock_alert(
+                decision=decision,
+                emit_console_banner=True,
+            )
+            self.latest_telegram_receipt = send_telegram_emergency_alert(
+                decision=decision,
+                override_bot_token=override_bot_token,
+                override_chat_id=override_chat_id,
+            )
+        except Exception as exc:
+            API_LOGGER.error("Fallo despachando alertas en background: %s", exc)
+
     def evaluate_current_state(
         self,
         dispatch_alerts: bool,
         override_bot_token: str | None = None,
         override_chat_id: str | None = None,
         enforce_stage: PipelineStage | None = None,
+        background_tasks: BackgroundTasks | None = None,
     ) -> dict[str, Any]:
-        """Ejecuta el Orquestador y opcionalmente la Capa de Notificaciones."""
+        """Ejecuta el Orquestador y opcionalmente delega notificaciones en segundo plano."""
         if enforce_stage is not None:
             self.enforced_stage = enforce_stage
 
@@ -211,15 +232,19 @@ class KybernaRuntimeStore:
         self.latest_decision = decision
 
         if dispatch_alerts:
-            self.latest_whatsapp_receipt = send_whatsapp_mock_alert(
-                decision=decision,
-                emit_console_banner=True,
-            )
-            self.latest_telegram_receipt = send_telegram_emergency_alert(
-                decision=decision,
-                override_bot_token=override_bot_token,
-                override_chat_id=override_chat_id,
-            )
+            if background_tasks is not None:
+                background_tasks.add_task(
+                    self.dispatch_alerts_worker,
+                    decision,
+                    override_bot_token,
+                    override_chat_id,
+                )
+            else:
+                self.dispatch_alerts_worker(
+                    decision,
+                    override_bot_token,
+                    override_chat_id,
+                )
 
         return self.build_dashboard_response()
 
@@ -308,7 +333,10 @@ def create_kyberna_web_app() -> FastAPI:
         return runtime_store.build_dashboard_response()
 
     @web_app.post("/api/v1/simulate")
-    def run_simulation_cycle(payload: SimulationPayload) -> dict[str, Any]:
+    def run_simulation_cycle(
+        payload: SimulationPayload,
+        background_tasks: BackgroundTasks,
+    ) -> dict[str, Any]:
         """Ejecuta una simulación interactiva actualizando clima, NLP y mapa."""
         try:
             runtime_store.active_scenario = ScenarioPreset(payload.scenario)
@@ -326,13 +354,17 @@ def create_kyberna_web_app() -> FastAPI:
                 override_bot_token=payload.telegram_bot_token,
                 override_chat_id=payload.telegram_chat_id,
                 enforce_stage=parsed_stage,
+                background_tasks=background_tasks,
             )
         except (KybernaDomainError, ValueError) as domain_err:
             API_LOGGER.error("Error controlado en /api/v1/simulate: %s", domain_err)
             raise HTTPException(status_code=400, detail=str(domain_err)) from domain_err
 
     @web_app.post("/api/v1/stage")
-    def set_pipeline_stage(payload: StageSelectionPayload) -> dict[str, Any]:
+    def set_pipeline_stage(
+        payload: StageSelectionPayload,
+        background_tasks: BackgroundTasks,
+    ) -> dict[str, Any]:
         """Fuerza la ejecución en una etapa específica del pipeline de 4 fases."""
         try:
             target_stage = parse_pipeline_stage(payload.stage)
@@ -360,6 +392,7 @@ def create_kyberna_web_app() -> FastAPI:
                 override_bot_token=payload.telegram_bot_token,
                 override_chat_id=payload.telegram_chat_id,
                 enforce_stage=target_stage,
+                background_tasks=background_tasks,
             )
         except (KybernaDomainError, ValueError) as domain_err:
             API_LOGGER.error("Error cambiando etapa en /api/v1/stage: %s", domain_err)
@@ -368,6 +401,7 @@ def create_kyberna_web_app() -> FastAPI:
     @web_app.post("/api/v1/notify")
     def trigger_manual_notifications(
         payload: NotificationTriggerPayload,
+        background_tasks: BackgroundTasks,
     ) -> dict[str, Any]:
         """Dispara en tiempo real la alerta por Telegram Bot API y WhatsApp Mock."""
         try:
@@ -375,6 +409,7 @@ def create_kyberna_web_app() -> FastAPI:
                 dispatch_alerts=True,
                 override_bot_token=payload.telegram_bot_token,
                 override_chat_id=payload.telegram_chat_id,
+                background_tasks=background_tasks,
             )
         except KybernaDomainError as domain_err:
             API_LOGGER.error("Error despachando alertas en /api/v1/notify: %s", domain_err)

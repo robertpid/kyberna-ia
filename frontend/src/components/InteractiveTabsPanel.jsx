@@ -35,6 +35,7 @@ export default function InteractiveTabsPanel({
   onResetReports,
   onDispatchNotifications,
   onOpenTelegramModal,
+  onFocusEmergencyMap,
 }) {
   const channelSelectId = useId();
   const reportTextId = useId();
@@ -49,7 +50,8 @@ export default function InteractiveTabsPanel({
 
   const tabs = [
     { id: "nlp", label: "Reportes NLP" },
-    { id: "web_scraping", label: "Web Scraping" },
+    { id: "web_scraping", label: "Web Scraping OSINT" },
+    { id: "humanitarian", label: "Acción Humanitaria" },
     { id: "notifications", label: "Alertas Enviadas" },
     { id: "ml_audit", label: "Métricas ML" },
   ];
@@ -423,7 +425,11 @@ export default function InteractiveTabsPanel({
           <article className="panel-block">
             <div className="block-header">
               <div>
-                <span className="eyebrow-tag">ETAPA 3 · INTELIGENCIA DE FUENTES ABIERTAS</span>
+                <span className="eyebrow-tag">
+                  {decision.current_stage?.includes("ETAPA 4")
+                    ? "ETAPA 4 · INTELIGENCIA DE FUENTES (INTEGRADA A EDAN)"
+                    : "ETAPA 3 · INTELIGENCIA DE FUENTES ABIERTAS"}
+                </span>
                 <h3>Web Scraping de Noticias y Redes</h3>
               </div>
               <span
@@ -500,6 +506,130 @@ export default function InteractiveTabsPanel({
                 </li>
               ))}
             </ul>
+          </article>
+        </div>
+      )}
+
+      {/* PESTAÑA: ACCIÓN HUMANITARIA (ETAPA 4 · DAMNIFICADOS, KITS SPHERE Y DESVÍO DIJKSTRA) */}
+      {activeTab === "humanitarian" && (
+        <div
+          id="panel-humanitarian"
+          role="tabpanel"
+          aria-labelledby="tab-humanitarian"
+          className="controls-column"
+        >
+          <article className="panel-block">
+            <div className="block-header">
+              <div>
+                <span className="eyebrow-tag">ETAPA 4 · ACCIÓN HUMANITARIA Y DESVÍO DIJKSTRA</span>
+                <h3>Cálculo de Damnificados y Despacho Logístico INDECI</h3>
+              </div>
+              <span
+                className={`pill ${
+                  decision.current_system_state === "ALERTA ROJA"
+                    ? "pill-critical"
+                    : "pill-ok"
+                }`}
+              >
+                {decision.current_system_state === "ALERTA ROJA"
+                  ? "DESVÍO VIAL ACTIVO"
+                  : "CORREDOR LIBRE"}
+              </span>
+            </div>
+
+            <p className="field-hint" style={{ marginBlockEnd: "0.6rem" }}>
+              Cálculo automatizado de necesidades humanitarias bajo estándar internacional SPHERE y re-enrutamiento logístico dinámico ante colapso en el Puente Río Moche.
+            </p>
+
+            <div className="submetrics-grid">
+              <div className="mini-stat">
+                <span>Población Afectada</span>
+                <strong style={{ color: "#ff6b8b" }}>
+                  ~{decision.humanitarian_impact?.total_affected_people ? decision.humanitarian_impact.total_affected_people.toLocaleString("es-PE") : 0} hab
+                </strong>
+                <small style={{ color: "#8fa0b5" }}>
+                  ({decision.humanitarian_impact?.total_affected_families || 0} familias)
+                </small>
+              </div>
+              <div className="mini-stat">
+                <span>Convoy INDECI Asignado</span>
+                <strong style={{ color: "#54d7f7" }}>
+                  {decision.humanitarian_impact?.indeci_trucks_required || 0} Camiones
+                </strong>
+                <small style={{ color: "#8fa0b5" }}>
+                  ({decision.humanitarian_impact?.total_cargo_tons || 0} TM de carga)
+                </small>
+              </div>
+              <div className="mini-stat">
+                <span>Kits de Alimentos (18kg)</span>
+                <strong style={{ color: "#ffb86c" }}>
+                  {decision.humanitarian_impact?.food_kits_18kg_count || 0} kits
+                </strong>
+                <small style={{ color: "#8fa0b5" }}>1 por familia / 7 días</small>
+              </div>
+              <div className="mini-stat">
+                <span>Agua Potable Total</span>
+                <strong style={{ color: "#50fa7b" }}>
+                  {decision.humanitarian_impact?.water_liters_total ? decision.humanitarian_impact.water_liters_total.toLocaleString("es-PE") : 0} L
+                </strong>
+                <small style={{ color: "#8fa0b5" }}>15 L/hab/día (SPHERE)</small>
+              </div>
+              <div className="mini-stat">
+                <span>Carpas Humanitarias</span>
+                <strong style={{ color: "#bd93f9" }}>
+                  {decision.humanitarian_impact?.tents_required || 0} carpas
+                </strong>
+                <small style={{ color: "#8fa0b5" }}>Para 60% casas colapsadas</small>
+              </div>
+              <div className="mini-stat">
+                <span>Frazadas Térmicas</span>
+                <strong style={{ color: "#f1fa8c" }}>
+                  {decision.humanitarian_impact?.blankets_required ? decision.humanitarian_impact.blankets_required.toLocaleString("es-PE") : 0} un.
+                </strong>
+                <small style={{ color: "#8fa0b5" }}>1 por persona afectada</small>
+              </div>
+            </div>
+
+            <div className="block-header" style={{ marginBlockStart: "0.85rem", marginBlockEnd: "0.4rem" }}>
+              <h4 style={{ margin: 0, fontSize: "0.85rem", color: "#6df" }}>
+                Plan Logístico de Desvío Vial (Dijkstra / OSRM)
+              </h4>
+            </div>
+
+            <ul className="trace-list" role="list">
+              <li className="trace-item" style={{ borderLeftColor: "#ff3358" }}>
+                <strong>Vía Crítica Bloqueada (Inundada):</strong>
+                Puente Río Moche - Panamericana Tradicional Sur (Caudal crítico &gt; 350 m³/s). Tránsito pesado cerrado.
+              </li>
+              <li className="trace-item" style={{ borderLeftColor: "#50fa7b" }}>
+                <strong>Corredor de Desvío Seguro Habilitado:</strong>
+                {decision.safe_route?.route_name || "Carretera Industrial PE-10A Laredo · Cota Alta Conache · Alto Salaverry"}
+              </li>
+              <li className="trace-item">
+                <strong>Métricas Operativas del Desvío:</strong>
+                Distancia total: <strong>{decision.safe_route?.total_distance_km ? decision.safe_route.total_distance_km.toFixed(1) : "71.0"} km</strong> · Tiempo estimado: <strong>{decision.safe_route?.estimated_travel_minutes || 69} min</strong> (Tránsito fluido asegurado).
+              </li>
+            </ul>
+
+            <div className="button-row" style={{ marginBlockStart: "0.75rem" }}>
+              <button
+                type="button"
+                className="btn btn-primary"
+                disabled={isBusy}
+                onClick={onDispatchNotifications}
+              >
+                Reenviar Alerta a Flota INDECI (Telegram)
+              </button>
+              {onFocusEmergencyMap && (
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={onFocusEmergencyMap}
+                >
+                  Enfocar Ruta en Mapa
+                </button>
+              )}
+            </div>
           </article>
         </div>
       )}
