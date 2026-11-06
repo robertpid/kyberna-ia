@@ -261,12 +261,12 @@ def draw_cursor_pointer(draw: ImageDraw.ImageDraw, x: float, y: float, pressed: 
 
 
 def render_act_1_crisis(draw: ImageDraw.ImageDraw, t: float) -> Tuple[float, float, bool]:
-    """Acto 1 (0s a 20s): El Problema Logístico y el Conteo de 72 Horas."""
+    """Acto 1 (0s a 24s): El Problema Logístico y el Conteo de 72 Horas."""
     # Cabecera interna
     draw_tag_chip(draw, (STAGE_X + 32, STAGE_Y + 24), "● EMERGENCIA FENÓMENO DEL NIÑO", COLOR_RED, (40, 15, 15))
     draw.text((STAGE_X + 340, STAGE_Y + 26), "Cuenca del Río Moche · La Libertad", fill=COLOR_MUTED, font=FONT_SUB)
 
-    progress = min(1.0, t / 18.0)
+    progress = min(1.0, t / 22.0)
     cur_hours = int(progress * 72)
     cur_mins = int((progress * 72 * 60) % 60)
     cur_secs = int((progress * 72 * 3600) % 60)
@@ -344,7 +344,7 @@ def render_act_1_crisis(draw: ImageDraw.ImageDraw, t: float) -> Tuple[float, flo
 
 
 def render_act_2_telemetry(draw: ImageDraw.ImageDraw, t: float) -> Tuple[float, float, bool]:
-    """Acto 2 (20s a 44s): Ingesta Multifuente IoT y Satelital en Tiempo Real."""
+    """Acto 2 (24s a 45s): Ingesta Multifuente IoT y Satelital en Tiempo Real."""
     draw_tag_chip(draw, (STAGE_X + 32, STAGE_Y + 24), "● INGESTA MULTIFUENTE EN VIVO", COLOR_CYAN, (15, 35, 45))
     draw.text((STAGE_X + 320, STAGE_Y + 26), "SENAMHI · NASA EONET · Copernicus Sentinel-1 SAR", fill=COLOR_MUTED, font=FONT_SUB)
 
@@ -352,7 +352,7 @@ def render_act_2_telemetry(draw: ImageDraw.ImageDraw, t: float) -> Tuple[float, 
     card_w = (STAGE_W - 84) // 3
     top_h = 240
 
-    k = min(1.0, (t - 20.0) / 20.0)
+    k = min(1.0, max(0.0, (t - 24.0) / 18.0))
     rain = 18.5 + (68.5 - 18.5) * k
     flow = 120 + (477 - 120) * k
     ssi = 45 + (88 - 45) * k
@@ -421,11 +421,11 @@ def render_act_2_telemetry(draw: ImageDraw.ImageDraw, t: float) -> Tuple[float, 
 
 
 def render_act_3_machine_learning(draw: ImageDraw.ImageDraw, t: float) -> Tuple[float, float, bool]:
-    """Acto 3 (44s a 74s): EL NÚCLEO DE MACHINE LEARNING EN ACCIÓN."""
+    """Acto 3 (45s a 76s): EL NÚCLEO DE MACHINE LEARNING EN ACCIÓN."""
     draw_tag_chip(draw, (STAGE_X + 32, STAGE_Y + 24), "● NÚCLEO PREDICTIVO DE MACHINE LEARNING", COLOR_GREEN, (15, 40, 20))
     draw.text((STAGE_X + 410, STAGE_Y + 26), "Ensamble Supervisado Random Forest + Gradient Boosting", fill=COLOR_MUTED, font=FONT_SUB)
 
-    k = min(1.0, (t - 44.0) / 18.0)
+    k = min(1.0, max(0.0, (t - 45.0) / 28.0))
     prob = 18.0 + (94.8 - 18.0) * k
 
     # Tag de alerta
@@ -508,7 +508,7 @@ def render_act_3_machine_learning(draw: ImageDraw.ImageDraw, t: float) -> Tuple[
 
 
 def render_act_4_dijkstra_nlp(draw: ImageDraw.ImageDraw, t: float) -> Tuple[float, float, bool]:
-    """Acto 4 (74s a 103s): NLP WhatsApp y Recálculo Vial Dijkstra OSRM."""
+    """Acto 4 (76s a 100s): NLP WhatsApp y Recálculo Vial Dijkstra OSRM."""
     draw_tag_chip(draw, (STAGE_X + 32, STAGE_Y + 24), "● VALIDACIÓN NLP Y RECÁLCULO VIAL", COLOR_CYAN, (15, 35, 45))
     draw.text((STAGE_X + 380, STAGE_Y + 26), "Clasificación NLP de Reportes WhatsApp + Algoritmo Dijkstra OSRM", fill=COLOR_MUTED, font=FONT_SUB)
     draw_tag_chip(draw, (STAGE_X + STAGE_W - 280, STAGE_Y + 24), "DESVÍO PE-10A ACTIVO", COLOR_GREEN, (15, 40, 20))
@@ -590,7 +590,7 @@ def render_act_4_dijkstra_nlp(draw: ImageDraw.ImageDraw, t: float) -> Tuple[floa
     draw.line(detour_pts, fill=COLOR_GREEN, width=5)
 
     # Baliza del vehículo moviéndose a lo largo del desvío
-    k_route = min(1.0, max(0.0, (t - 74.0) / 28.0))
+    k_route = min(1.0, max(0.0, (t - 76.0) / 21.0))
     seg_idx = int(k_route * (len(detour_pts) - 1))
     sub_k = (k_route * (len(detour_pts) - 1)) - seg_idx
     p_start = detour_pts[min(seg_idx, len(detour_pts) - 2)]
@@ -616,7 +616,7 @@ def render_act_4_dijkstra_nlp(draw: ImageDraw.ImageDraw, t: float) -> Tuple[floa
 
 
 def render_act_5_humanitarian(draw: ImageDraw.ImageDraw, t: float) -> Tuple[float, float, bool]:
-    """Acto 5 (103s a 120s): Suministros Humanitarios EDAN y Ecosistema Nacional."""
+    """Acto 5 (100s a 120s): Suministros Humanitarios EDAN y Ecosistema Nacional."""
     draw_tag_chip(draw, (STAGE_X + 32, STAGE_Y + 24), "● LOGÍSTICA HUMANITARIA INMEDIATA", COLOR_GREEN, (15, 40, 20))
     draw.text((STAGE_X + 380, STAGE_Y + 26), "Cálculo Censal EDAN · Estándares Humanitarios SPHERE", fill=COLOR_MUTED, font=FONT_SUB)
     draw_tag_chip(draw, (STAGE_X + STAGE_W - 270, STAGE_Y + 24), "HACKATHON UPN IA+ 2026", COLOR_CYAN, (15, 35, 45))
@@ -709,8 +709,8 @@ def render_html_demo_video() -> None:
     proc = subprocess.Popen(ffmpeg_cmd, stdin=subprocess.PIPE)
 
     # Duración de cada paso en segundos
-    step_durations = [20.0, 24.0, 30.0, 29.0, 17.0]
-    step_starts = [0.0, 20.0, 44.0, 74.0, 103.0]
+    step_durations = [24.0, 21.0, 31.0, 24.0, 20.0]
+    step_starts = [0.0, 24.0, 45.0, 76.0, 100.0]
 
     for frame_idx in range(TOTAL_FRAMES):
         t = frame_idx / FPS

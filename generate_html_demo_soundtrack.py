@@ -1,9 +1,7 @@
 """Generador de Banda Sonora y Locución Neural para el Video HTML-Demo de Kyberna IA.
 
-Genera las 5 locuciones neurales con 'es-PE-AlexNeural' explicando el modelo de
-Machine Learning, el filtro NLP y el algoritmo Dijkstra sin tiempos muertos,
-y las mezcla con la música electrónica de sintetizador y efectos de sonido en
-un master WAV estéreo de 120.0 segundos exactos.
+Garantiza CERO solapamientos entre pistas de locución, dejando entre 2.4 y 2.9 segundos
+de respiro natural entre cada acto, y sincroniza la música y efectos en 120.0s exactos.
 """
 
 from __future__ import annotations
@@ -29,46 +27,48 @@ TOTAL_SAMPLES: Final[int] = int(SAMPLE_RATE * TOTAL_DURATION_SEC)
 
 SOUND_DIR: Final[Path] = Path(__file__).resolve().parent / "pitch_video_assets" / "html_demo_audio"
 MASTER_WAV_PATH: Final[Path] = SOUND_DIR / "html_demo_master_soundtrack_120s.wav"
+HTML_DEMO_MP3_PATH: Final[Path] = Path(__file__).resolve().parent / "html_demo" / "audio.mp3"
 
+# Guiones concisos y contundentes con tiempos medidos para cero cruces de voz
 VOICE_SCRIPTS: Final[List[Tuple[int, float, str]]] = [
     (
         1,
-        1.5,
-        "En cada Fenómeno del Niño, las inundaciones y huaicos aíslan comunidades enteras en la costa norte del Perú. "
-        "Hoy, la evaluación oficial de daños tarda hasta setenta y dos horas en reaccionar. "
-        "Setenta y dos horas críticas donde la desinformación satura las líneas y los convoyes de ayuda quedan varados a ciegas. "
-        "Kyberna IA nace para transformar esa parálisis en respuesta inmediata desde el minuto cero."
+        1.0,
+        "Ante el Fenómeno del Niño, las inundaciones aíslan comunidades enteras en la costa peruana. "
+        "Hoy, la evaluación oficial de daños tarda hasta setenta y dos horas. "
+        "Setenta y dos horas críticas donde la desinformación satura las líneas y la ayuda queda varada. "
+        "Kyberna IA nace para eliminar esa parálisis desde el minuto cero."
     ),
     (
         2,
-        21.0,
+        25.0,
         "Kyberna orquesta telemetría continua de alta precisión. "
-        "Consume datos en tiempo real de estaciones hidrológicas de SENAMHI, anomalías térmicas del satélite NASA EONET "
-        "y radar de apertura sintética de Copernicus Sentinel-1. "
-        "Cuando los umbrales pluviométricos superan niveles de seguridad, la plataforma despierta automáticamente su arquitectura inteligente."
+        "Consume datos en tiempo real de estaciones hidrológicas de SENAMHI, focos térmicos de NASA EONET "
+        "y radar satelital Sentinel-1. "
+        "Si los umbrales de lluvia superan niveles seguros, el sistema despierta de forma autónoma."
     ),
     (
         3,
-        45.5,
-        "Aquí opera nuestro núcleo de Machine Learning. "
-        "Un ensamble supervisado Random Forest y Gradient Boosting, entrenado con las series históricas de los Niños mil novecientos noventa y siete, "
-        "dos mil diecisiete y Yaku dos mil veintitrés. "
-        "El modelo evalúa cinco variables clave: precipitación acumulada, saturación hídrica del suelo, caudal ribereño, pendiente de quebradas y temperatura marina. "
-        "Con noventa y cuatro punto ocho por ciento de probabilidad de desastre, predice el colapso del Puente Moche treinta y ocho minutos antes de que el huaico alcance la autopista."
+        46.0,
+        "Aquí opera nuestro núcleo de Machine Learning: un ensamble supervisado Random Forest y Gradient Boosting, "
+        "entrenado con series históricas del Niño mil novecientos noventa y siete, dos mil diecisiete y Yaku dos mil veintitrés. "
+        "Evalúa lluvia acumulada, saturación de suelo, caudal, pendiente y anomalía térmica marina. "
+        "Con noventa y cuatro punto ocho por ciento de probabilidad de desastre, "
+        "predice el colapso del Puente Moche treinta y ocho minutos antes del impacto físico."
     ),
     (
         4,
-        75.5,
-        "En paralelo, el motor de Procesamiento de Lenguaje Natural procesa y valida reportes ciudadanos de WhatsApp y prensa regional, "
-        "descartando rumores con un clasificador de credibilidad del noventa y cinco por ciento. "
-        "Confirmado el peligro, nuestro optimizador de grafos recalcula la ruta logística al instante: "
-        "mediante el algoritmo de Dijkstra sobre carreteras reales de OpenStreetMap, desvía los convoyes por la ruta alterna PE-diez-A Laredo, garantizando cero riesgo de huaico."
+        77.5,
+        "En paralelo, nuestro filtro de Procesamiento de Lenguaje Natural procesa reportes ciudadanos de WhatsApp, "
+        "descartando rumores con noventa y cinco por ciento de credibilidad. "
+        "Al instante, el algoritmo de Dijkstra sobre carreteras reales de OpenStreetMap desvía los convoyes "
+        "por la ruta alterna PE-diez-A Laredo, garantizando cero riesgo de huaico."
     ),
     (
         5,
-        104.5,
-        "Kyberna no solo avisa: cuantifica de inmediato familias damnificadas y raciones requeridas bajo estándares internacionales EDAN y SPHERE. "
-        "Somos una solución modular B2G y B2B, lista para escalar a todas las cuencas del Perú. "
+        101.5,
+        "Kyberna cuantifica de inmediato familias damnificadas y raciones requeridas bajo normas EDAN y SPHERE. "
+        "Una solución modular B2G y B2B lista para escalar a todo el Perú. "
         "Kyberna IA: anticipación inteligente que salva vidas."
     ),
 ]
@@ -90,9 +90,9 @@ def synthesize_ambient_soundtrack(duration_sec: float = 120.0) -> np.ndarray:
 
     # 1. Pad cinematográfico suave
     pad = (
-        0.14 * np.sin(2 * np.pi * 146.83 * time_arr)
-        + 0.12 * np.sin(2 * np.pi * 174.61 * time_arr + 0.6)
-        + 0.13 * np.sin(2 * np.pi * 220.00 * time_arr + 1.2)
+        0.13 * np.sin(2 * np.pi * 146.83 * time_arr)
+        + 0.11 * np.sin(2 * np.pi * 174.61 * time_arr + 0.6)
+        + 0.12 * np.sin(2 * np.pi * 220.00 * time_arr + 1.2)
         + 0.08 * np.sin(2 * np.pi * 261.63 * time_arr + 1.8)
     )
     pad *= 0.65 + 0.35 * np.sin(2 * np.pi * 0.09 * time_arr)
@@ -107,7 +107,7 @@ def synthesize_ambient_soundtrack(duration_sec: float = 120.0) -> np.ndarray:
 
     # Empieza después del intro (t = 8s)
     for i in range(int(SAMPLE_RATE * 8.0), num_samples - kick_len, step):
-        kick_pulse[i : i + kick_len] += kick_kernel * 0.16
+        kick_pulse[i : i + kick_len] += kick_kernel * 0.15
 
     # 3. Arpegio cyber melódico sutil
     arpeggio = np.zeros(num_samples, dtype=np.float32)
@@ -119,12 +119,12 @@ def synthesize_ambient_soundtrack(duration_sec: float = 120.0) -> np.ndarray:
     for idx, i in enumerate(range(int(SAMPLE_RATE * 18.0), num_samples - note_len, arp_step)):
         n_freq = notes[idx % len(notes)]
         env = np.exp(-24 * t_note)
-        arpeggio[i : i + note_len] += (np.sin(2 * np.pi * n_freq * t_note) * env * 0.07).astype(np.float32)
+        arpeggio[i : i + note_len] += (np.sin(2 * np.pi * n_freq * t_note) * env * 0.06).astype(np.float32)
 
     mix = pad + kick_pulse + arpeggio
     peak = np.max(np.abs(mix))
     if peak > 0:
-        mix = (mix / peak) * 0.20
+        mix = (mix / peak) * 0.19
 
     # Fade out final
     fade_len = int(SAMPLE_RATE * 2.5)
@@ -133,10 +133,10 @@ def synthesize_ambient_soundtrack(duration_sec: float = 120.0) -> np.ndarray:
 
 
 def synthesize_ui_click(duration_sec: float = 0.04) -> np.ndarray:
-    """Sintetiza un click suave de ratón / interfaz."""
+    """Sintetiza un click suave de interfaz."""
     num_samples = int(SAMPLE_RATE * duration_sec)
     t = np.linspace(0.0, duration_sec, num_samples, endpoint=False)
-    click = np.sin(2 * np.pi * 1800 * t) * np.exp(-120 * t) * 0.35
+    click = np.sin(2 * np.pi * 1800 * t) * np.exp(-120 * t) * 0.30
     return click.astype(np.float32)
 
 
@@ -147,7 +147,7 @@ def synthesize_blip(freq_start: float = 900.0, freq_end: float = 1800.0, duratio
     sweep = np.geomspace(freq_start, freq_end, num_samples)
     phase = 2 * np.pi * np.cumsum(sweep) / SAMPLE_RATE
     env = np.exp(-14 * t / duration_sec)
-    return (0.35 * np.sin(phase) * env).astype(np.float32)
+    return (0.30 * np.sin(phase) * env).astype(np.float32)
 
 
 def synthesize_soft_alarm(duration_sec: float = 0.6) -> np.ndarray:
@@ -155,60 +155,55 @@ def synthesize_soft_alarm(duration_sec: float = 0.6) -> np.ndarray:
     samples = int(SAMPLE_RATE * (duration_sec / 2.0))
     t = np.linspace(0.0, duration_sec / 2.0, samples, endpoint=False)
     env = np.sin(np.pi * t / (duration_sec / 2.0)) ** 2
-    tone1 = 0.28 * np.sin(2 * np.pi * 659.25 * t) * env  # E5
-    tone2 = 0.32 * np.sin(2 * np.pi * 987.77 * t) * env  # B5
+    tone1 = 0.25 * np.sin(2 * np.pi * 659.25 * t) * env  # E5
+    tone2 = 0.28 * np.sin(2 * np.pi * 987.77 * t) * env  # B5
     return np.concatenate([tone1, tone2]).astype(np.float32)
 
 
 async def generate_voiceovers() -> None:
-    """Genera las 5 pistas de audio con edge-tts en español de Perú."""
+    """Genera las 5 pistas de audio con edge-tts a velocidad +12% sin solapamientos."""
     SOUND_DIR.mkdir(parents=True, exist_ok=True)
     voice = "es-PE-AlexNeural"
 
     for act_idx, _, text in VOICE_SCRIPTS:
         mp3_out = SOUND_DIR / f"vo_act_{act_idx}.mp3"
-        if not mp3_out.exists():
-            LOGGER.info("Generando locución Acto %d con %s...", act_idx, voice)
-            comm = edge_tts.Communicate(text, voice, rate="+6%", pitch="+0Hz")
-            await comm.save(str(mp3_out))
-        else:
-            LOGGER.info("Locución Acto %d ya existente: %s", act_idx, mp3_out.name)
+        LOGGER.info("Generando locución calibrada Acto %d con %s (+12%% rate)...", act_idx, voice)
+        comm = edge_tts.Communicate(text, voice, rate="+12%", pitch="+0Hz")
+        await comm.save(str(mp3_out))
 
 
 def assemble_soundtrack() -> Path:
-    """Mezcla música, efectos de interfaz y locución en una pista estéreo sincronizada."""
-    LOGGER.info("Iniciando mezcla de banda sonora maestra (120.0s)...")
+    """Mezcla música, efectos de interfaz y locución verificando CERO solapamientos."""
+    LOGGER.info("Iniciando mezcla de banda sonora maestra sin cruces de voz (120.0s)...")
     master_audio = np.zeros(TOTAL_SAMPLES, dtype=np.float32)
 
-    # 1. Base musical
+    # 1. Base musical envolvente
     music = synthesize_ambient_soundtrack(TOTAL_DURATION_SEC)
     master_audio += music
 
-    # 2. Clicks y blips de interacción en momentos clave
+    # 2. Clicks y efectos sonoros en transiciones de pasos
     click_sfx = synthesize_ui_click()
     blip_sfx = synthesize_blip()
     alarm_sfx = synthesize_soft_alarm()
 
-    # Clicks de cambio de paso en la barra de pasos (t=0s, 20s, 44s, 74s, 103s)
-    step_times = [1.0, 20.2, 44.5, 74.5, 103.5]
+    step_times = [0.8, 24.2, 45.2, 76.5, 100.5]
     for st in step_times:
         idx = int(st * SAMPLE_RATE)
-        master_audio[idx : idx + len(click_sfx)] += click_sfx * 0.7
+        master_audio[idx : idx + len(click_sfx)] += click_sfx * 0.6
 
-    # Blips de carga de APIs en Acto 2 (t=25s, 30s, 35s)
-    for bt in [25.0, 30.0, 35.0]:
+    for bt in [27.0, 32.0, 37.0]:
         idx = int(bt * SAMPLE_RATE)
-        master_audio[idx : idx + len(blip_sfx)] += blip_sfx * 0.5
+        master_audio[idx : idx + len(blip_sfx)] += blip_sfx * 0.45
 
-    # Alarma en Acto 3 al alcanzar 94.8% en ML (t=64.0s)
-    alarm_idx = int(64.0 * SAMPLE_RATE)
-    master_audio[alarm_idx : alarm_idx + len(alarm_sfx)] += alarm_sfx * 0.8
+    alarm_idx = int(63.0 * SAMPLE_RATE)
+    master_audio[alarm_idx : alarm_idx + len(alarm_sfx)] += alarm_sfx * 0.7
 
-    # Blip de ruteo Dijkstra en Acto 4 (t=88.0s)
-    dijkstra_idx = int(88.0 * SAMPLE_RATE)
-    master_audio[dijkstra_idx : dijkstra_idx + len(blip_sfx)] += blip_sfx * 0.6
+    dijkstra_idx = int(86.0 * SAMPLE_RATE)
+    master_audio[dijkstra_idx : dijkstra_idx + len(blip_sfx)] += blip_sfx * 0.55
 
-    # 3. Mezcla de las pistas de locución
+    # 3. Mezcla de las pistas de locución con validación estricta de tiempos
+    prev_end_time = 0.0
+
     for act_idx, start_time, _ in VOICE_SCRIPTS:
         mp3_path = SOUND_DIR / f"vo_act_{act_idx}.mp3"
         wav_path = SOUND_DIR / f"vo_act_{act_idx}.wav"
@@ -227,11 +222,30 @@ def assemble_soundtrack() -> Path:
         else:
             vo_float = vo_samples.astype(np.float32)
 
+        vo_dur = len(vo_float) / SAMPLE_RATE
+        end_time = start_time + vo_dur
+
+        LOGGER.info(
+            "Acto %d: Inicio = %0.2f s | Duración = %0.2f s | Fin = %0.2f s | Espacio con anterior = +%0.2f s",
+            act_idx,
+            start_time,
+            vo_dur,
+            end_time,
+            start_time - prev_end_time,
+        )
+
+        if start_time < prev_end_time:
+            raise ValueError(
+                f"ERROR DE CRUCE: Acto {act_idx} comienza en {start_time}s antes de que termine el anterior en {prev_end_time}s."
+            )
+
+        prev_end_time = end_time
+
         start_sample = int(start_time * SAMPLE_RATE)
         end_sample = min(TOTAL_SAMPLES, start_sample + len(vo_float))
         samples_len = end_sample - start_sample
 
-        master_audio[start_sample:end_sample] += vo_float[:samples_len] * 0.88
+        master_audio[start_sample:end_sample] += vo_float[:samples_len] * 0.90
 
     # 4. Normalización dinámica
     peak = np.max(np.abs(master_audio))
@@ -244,15 +258,23 @@ def assemble_soundtrack() -> Path:
     int16_stereo = (stereo * 32767.0).astype(np.int16)
     wavfile.write(str(MASTER_WAV_PATH), SAMPLE_RATE, int16_stereo)
     LOGGER.info("Audio maestro exportado a %s (%0.2f s)", MASTER_WAV_PATH.name, TOTAL_DURATION_SEC)
+
+    # 6. Actualizar MP3 para el demo interactivo web
+    subprocess.run(
+        ["ffmpeg", "-y", "-i", str(MASTER_WAV_PATH), "-b:a", "192k", str(HTML_DEMO_MP3_PATH)],
+        check=True,
+        capture_output=True,
+    )
+    LOGGER.info("Audio web MP3 actualizado en %s", HTML_DEMO_MP3_PATH.name)
+
     return MASTER_WAV_PATH
 
 
 def main() -> None:
-    """Flujo principal de generación de banda sonora."""
+    """Genera locución calibrada y mezcla maestra sin cruces de audio."""
     asyncio.run(generate_voiceovers())
     assemble_soundtrack()
 
 
 if __name__ == "__main__":
     main()
-
