@@ -1,0 +1,14 @@
+services:
+  kyberna-ia:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kyberna-ia:latest
+    container_name: kyberna_ia_server
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID:-}
+    restart: unless-stopped
