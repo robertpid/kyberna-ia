@@ -11,6 +11,7 @@
 > Implementa un **Pipeline Autónomo de 4 Etapas**, cálculo de damnificados basado en normas **EDAN / CENEPRED** y desvío vial dinámico con **Dijkstra sobre carreteras reales (OpenStreetMap / OSRM)** en la cuenca del Río Moche (La Libertad).
 
 📄 **Dossier Técnico Ejecutivo en PDF:** [Descargar Kyberna_IA_Dossier_Tecnico.pdf](Kyberna_IA_Dossier_Tecnico.pdf)  
+🎬 **Video Pitch de 2 Minutos (Hackathon):** [Ver kyberna_ia_pitch_2min.mp4](kyberna_ia_pitch_2min.mp4)  
 🔗 **Repositorio Oficial en GitHub:** [https://github.com/robertpid/kyberna-ia](https://github.com/robertpid/kyberna-ia)
 
 ---
@@ -55,6 +56,39 @@
 | **Alertas Tardías o Alarmistas:** Reportes meteorológicos genéricos generan pánico o desatención ciudadana. | **Avisos Informativos Graduales:** Alertas tempranas no alarmistas vía Telegram y WhatsApp enfocadas en prevención. |
 | **Ceguera Logística en Carreteras:** Convoyes de INDECI y flotas comerciales quedan varados en puentes colapsados. | **Desvíos Viales en Tiempo Real:** Algoritmo Dijkstra sobre polilíneas reales (OSRM) para desvío seguro por rutas alternas (ej. PE-10A Laredo). |
 | **Estimaciones a Ciegas:** El conteo oficial de damnificados (ficha EDAN) tarda entre 48 y 72 horas tras el huaico. | **Estimación Inmediata Instantánea:** Cruce de mapas censales INEI, tipo de vivienda y saturación de suelo para estimar familias, alimentos y camiones en 0 segundos. |
+
+---
+
+## 🎬 Video Pitch Oficial de 2 Minutos (Hackathon Perú 2026)
+
+El video oficial de presentación técnica en alta definición (**1080p a 60 fps**, banda sonora de sintetizador ambiental y locución neural en español `es-PE-AlexNeural`) integra de forma protagónica la grabación de pantalla de la plataforma en acción a lo largo de sus 4 fases operativas:
+
+### 📸 Galería Cinematográfica del Pitch:
+
+| Acto 1: El Problema Crítico (0s - 19.5s) | Acto 2 · Etapa 1: Vigilancia 15m (19.5s - 37s) |
+| :---: | :---: |
+| ![Acto 1](docs/images/pitch_act1_problema.png) | ![Etapa 1](docs/images/pitch_act2_etapa1.png) |
+| *Colapso del Puente Moche, Panamericana Norte fracturada y 72h de retraso INDECI.* | *Polling cada 15m a SENAMHI, Sentinel-1 SAR y NASA EONET. Semáforo verde.* |
+
+| Acto 2 · Etapa 2: Alerta Preventiva ML (37s - 53.5s) | Acto 2 · Etapa 3: Web Scraping en Vivo (53.5s - 72.5s) |
+| :---: | :---: |
+| ![Etapa 2](docs/images/pitch_act2_etapa2.png) | ![Etapa 3](docs/images/pitch_act2_etapa3.png) |
+| *Inferencia Kernel RBF 93.9% y aviso informativo sereno sin pánico ciudadano.* | *Extracción de RPP y La Industria con filtro anti-fake news (>90% credibilidad).* |
+
+| Acto 2 · Etapa 4: Desvío Dijkstra & Damnificados (72.5s - 91s) | Acto 3: Modelo de Negocio B2G & B2B (91s - 114.5s) |
+| :---: | :---: |
+| ![Etapa 4](docs/images/pitch_act2_etapa4.png) | ![Acto 3](docs/images/pitch_act3_negocio.png) |
+| *Ruta alterna segura PE-10A Laredo, ~1,606 damnificados y 397 kits INDECI 72h.* | *SaaS anual para INDECI y suscripción por camión activo para minería/agro.* |
+
+<div align="center">
+
+### Acto 4: Escalabilidad Nacional (INEI + CENEPRED) y Cierre Triunfal (114.5s - 133s)
+![Acto 4](docs/images/pitch_act4_cierre.png)  
+*Integración modular con microdatos censales INEI y fajas marginales CENEPRED SIGRID para las 25 regiones del Perú.*
+
+</div>
+
+📁 **Archivo de Video:** [`kyberna_ia_pitch_2min.mp4`](kyberna_ia_pitch_2min.mp4) (24.7 MB) | **Script Renderizador:** [`render_pitch_video_2min_hq.py`](render_pitch_video_2min_hq.py)
 
 ---
 

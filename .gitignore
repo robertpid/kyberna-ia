@@ -33,4 +33,9 @@ desktop.ini
 *.mp4
 *.mkv
 *.mov
+# Permitir video pitch oficial de 2 minutos (14 MB)
+!kyberna_ia_pitch_2min.mp4
+pitch_video_assets/
+
+
 
