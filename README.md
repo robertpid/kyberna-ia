@@ -59,36 +59,35 @@
 
 ---
 
-## 🎬 Video Pitch Oficial de 2 Minutos (Hackathon Perú 2026)
+## 🎬 Video Pitch Oficial de 2 Minutos (Hackathon UPN IA+ 2026)
 
-El video oficial de presentación técnica en alta definición (**1080p a 60 fps**, banda sonora de sintetizador ambiental y locución neural en español `es-PE-AlexNeural`) integra de forma protagónica la grabación de pantalla de la plataforma en acción a lo largo de sus 4 fases operativas:
+El video oficial de presentación técnica en alta definición (**1080p, 120.0 segundos exactos**, banda sonora de sintetizador ambiental en Re Menor, efectos de sonido de teclado mecánico, blips de conexión API, alerta hidrológica y locución neural en español peruano `es-PE-AlexNeural`) adopta la estética solicitada de **terminal de consola minimalista**: fondo negro profundo (#000000), tipografía verde y blanca audaz, animaciones rápidas de tipeo en tiempo real y gráficos de flujo interactivos.
 
-### 📸 Galería Cinematográfica del Pitch:
+### 📸 Galería del Storyboard Terminal (2:00 Minutos Exactos):
 
-| Acto 1: El Problema Crítico (0s - 19.5s) | Acto 2 · Etapa 1: Vigilancia 15m (19.5s - 37s) |
+| Acto 1: El Problema (0:00 - 0:15) | Acto 2: La Solución Kyberna IA (0:15 - 0:45) |
 | :---: | :---: |
-| ![Acto 1](docs/images/pitch_act1_problema.png) | ![Etapa 1](docs/images/pitch_act2_etapa1.png) |
-| *Colapso del Puente Moche, Panamericana Norte fracturada y 72h de retraso INDECI.* | *Polling cada 15m a SENAMHI, Sentinel-1 SAR y NASA EONET. Semáforo verde.* |
+| ![Acto 1 Terminal](docs/images/terminal_pitch_act1.jpg) | ![Acto 2 Terminal](docs/images/terminal_pitch_act2.jpg) |
+| *«Cuando el clima cambia... el tiempo de respuesta es vital». Temporizador rojo contando de 0 a 72 Horas.* | *Logo verde de Kyberna IA y conexión API con blips a SENAMHI, NASA EONET y Copernicus.* |
 
-| Acto 2 · Etapa 2: Alerta Preventiva ML (37s - 53.5s) | Acto 2 · Etapa 3: Web Scraping en Vivo (53.5s - 72.5s) |
+| Acto 3: El Funcionamiento - Monitoreo (0:45 - 1:15) | Acto 4: NLP y Respuesta Logística (1:15 - 1:45) |
 | :---: | :---: |
-| ![Etapa 2](docs/images/pitch_act2_etapa2.png) | ![Etapa 3](docs/images/pitch_act2_etapa3.png) |
-| *Inferencia Kernel RBF 93.9% y aviso informativo sereno sin pánico ciudadano.* | *Extracción de RPP y La Industria con filtro anti-fake news (>90% credibilidad).* |
-
-| Acto 2 · Etapa 4: Desvío Dijkstra & Damnificados (72.5s - 91s) | Acto 3: Modelo de Negocio B2G & B2B (91s - 114.5s) |
-| :---: | :---: |
-| ![Etapa 4](docs/images/pitch_act2_etapa4.png) | ![Acto 3](docs/images/pitch_act3_negocio.png) |
-| *Ruta alterna segura PE-10A Laredo, ~1,606 damnificados y 397 kits INDECI 72h.* | *SaaS anual para INDECI y suscripción por camión activo para minería/agro.* |
+| ![Acto 3 Terminal](docs/images/terminal_pitch_act3.jpg) | ![Acto 4 Terminal](docs/images/terminal_pitch_act4.jpg) |
+| *Vigilancia pasiva en verde que transiciona súbitamente a ALERTA ROJA por lluvia > 50mm (68.5mm / 477 m³/s).* | *Reportes WhatsApp filtrados con NLP (95% credibilidad) y recálculo instantáneo por desvío PE-10A (Dijkstra).* |
 
 <div align="center">
 
-### Acto 4: Escalabilidad Nacional (INEI + CENEPRED) y Cierre Triunfal (114.5s - 133s)
-![Acto 4](docs/images/pitch_act4_cierre.png)  
-*Integración modular con microdatos censales INEI y fajas marginales CENEPRED SIGRID para las 25 regiones del Perú.*
+### Acto 5: El Futuro y Cierre del Pitch (1:45 - 2:00)
+![Acto 5 Terminal](docs/images/terminal_pitch_act5.jpg)  
+*Ecosistema modular expandido (Salud, Marítimo, Drones, B2B) y cierre institucional para la **Hackathon UPN IA+ 2026**.*
 
 </div>
 
-📁 **Archivo de Video:** [`kyberna_ia_pitch_2min.mp4`](kyberna_ia_pitch_2min.mp4) (24.7 MB) | **Script Renderizador:** [`render_pitch_video_2min_hq.py`](render_pitch_video_2min_hq.py)
+📁 **Archivo de Video:** [`kyberna_ia_pitch_2min.mp4`](kyberna_ia_pitch_2min.mp4) (5.45 MB, 1080p, 30fps, 120.0s)  
+🛠️ **Scripts del Pipeline:**
+- Generador de Video Terminal: [`render_terminal_pitch_video.py`](render_terminal_pitch_video.py)
+- Sintetizador de Audio & SFX: [`generate_pitch_soundtrack.py`](generate_pitch_soundtrack.py)
+- Versión Hypeframe / Motion Graphics: [`render_hypeframe_pitch_video.py`](render_hypeframe_pitch_video.py)
 
 ---
 
