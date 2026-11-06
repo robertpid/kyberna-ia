@@ -215,12 +215,12 @@ def estimate_humanitarian_impact(
 
     # Cruce con Web Scraping de campo para heridos y estructuras en riesgo
     estimated_injured = (
-        scraped_audit.isolated_injured_signals_count * 2
+        scraped_audit.isolated_injured_signals_count
         if (scraped_audit and scraped_audit.isolated_injured_signals_count > 0)
         else max(2, round(total_vulnerable * 0.025))
     )
     structures_at_risk = (
-        scraped_audit.structures_at_risk_count * 9
+        scraped_audit.structures_at_risk_count
         if (scraped_audit and scraped_audit.structures_at_risk_count > 0)
         else round(total_dwellings * 0.35)
     )

@@ -157,13 +157,15 @@ class KybernaOrchestrator:
 
         self._current_stage = active_stage
 
-        # Activación del Web Scraping en Etapas 3 y 4
+        # Activación del Web Scraping en Etapas 3 y 4 con escalado racional
         is_scraping_active = active_stage in (
             PipelineStage.ETAPA_3_WEB_SCRAPING,
             PipelineStage.ETAPA_4_ACCION_HUMANITARIA,
         )
         web_scraping_audit = scrape_regional_sources_feed(
-            is_emergency_triggered=is_scraping_active
+            is_emergency_triggered=is_scraping_active,
+            accumulated_rain_mm=huaico_assessment.accumulated_rain_mm,
+            river_discharge_m3s=huaico_assessment.river_discharge_m3s,
         )
 
         requires_detour = active_stage == PipelineStage.ETAPA_4_ACCION_HUMANITARIA
